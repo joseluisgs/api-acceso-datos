@@ -5,46 +5,29 @@ type Query {
   hello: String
 }
 
-type Programador {
+type Aeropuerto {
   id: ID!
-  nombre: String!
-  experiencia: Int!
-  departamento: Departamento!
-  salario: Float!
-  perfil: Perfil!
-  fechaAlta: DateTime!
-  lenguajes: [Lenguaje!]! 
-  proyectos: [Proyecto!]!
+  localizacion: String!
+  rutas: [Ruta!]!
+  aviones: [Avion!]!
 }
 
-type Departamento {
+type Ruta {
   id: ID!
-  nombre: String!
-  presupuesto: Float!
-  programadores: [Programador!]! 
-  jefe: Programador! 
-  proyectos: [Proyecto!]!
+  fechaHoraSalida: DateTime!
+  kilometros: Int!
 }
 
-type Proyecto {
+type Avion {
   id: ID!
-  nombre: String!
-  presupuesto: Float!
-  responsable: Programador!
-  programadores: [Programador!]! 
-  departamento: Departamento! 
-  fechaInicio: DateTime!
-  fechaFin: DateTime!
+  matricula: String!
+  velocidadHora: Int!
+  pasajeros: [Pasajero!]!
 }
 
-type Lenguaje {
+type Pasajero {
   id: ID!
   nombre: String!
-  programadores: [Programador!]! 
+  apellido: String!
 }
 
-enum Perfil {
-  Analista
-  Desarrollador
-  Testeador
-}
