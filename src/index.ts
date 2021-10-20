@@ -1,5 +1,5 @@
 import express from 'express';
-import { ApolloServer, Config, gql } from 'apollo-server-express';
+import { ApolloServer, Config } from 'apollo-server-express';
 import { join } from 'path';
 import { loadTypedefsSync } from '@graphql-tools/load';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';

@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/joseluisgs/ts-api-acceso-datos#readme",
   "devDependencies": {
+    "@types/faker": "^5.5.9",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.1",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
