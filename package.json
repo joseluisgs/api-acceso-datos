@@ -1,0 +1,43 @@
+{
+  "name": "api-acceso-datos",
+  "version": "1.0.0",
+  "description": "Ejemplo de API REST y GraphQL para consultar y consumir en Acceso a Datos",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "dev:watch": "nodemon",
+    "dev:run": "ts-node --files src/index.ts",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseluisgs/ts-api-acceso-datos.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "grapql"
+  ],
+  "author": "joseluisgs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joseluisgs/ts-api-acceso-datos/issues"
+  },
+  "homepage": "https://github.com/joseluisgs/ts-api-acceso-datos#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "nodemon": "^2.0.14",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  }
+}
