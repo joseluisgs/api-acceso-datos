@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/joseluisgs/ts-api-acceso-datos#readme",
   "devDependencies": {
+    "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.1",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
@@ -39,5 +40,15 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.4.0",
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "^15.6.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0"
   }
 }
