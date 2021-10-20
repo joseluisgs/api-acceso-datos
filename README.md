@@ -1,16 +1,16 @@
 # API - Acceso a Datos
-Sencilla Api para ser consumida siguiendo REST o GraphQL
+Sencilla API para ser consumida siguiendo REST o GraphQL
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178c6)](https://www.typescriptlang.org/)
 [![Code Style](https://img.shields.io/badge/Lint%20Style-AirBnB-ff69b4)](https://airbnb.io/javascript)
 [![Licence](https://img.shields.io/github/license/joseluisgs/photo-gallery-ionic)](./LICENSE)
-![GitHub](https://img.shields.io/github/last-commit/joseluisgs/ts-node-init)
+![GitHub](https://img.shields.io/github/last-commit/joseluisgs/api-acceso-datps)
 
 
-![imagen](https://i.pinimg.com/originals/c3/8e/e8/c38ee8475ee7f3680f706c56c3a1194c.png)
+![imagen](./images/rest-graphql.png)
 
-- [](#)
-  - [Instrucciones](#instrucciones)
+- [API - Acceso a Datos](#api---acceso-a-datos)
+  - [Acerca de](#acerca-de)
     - [Uso](#uso)
       - [Instalación](#instalación)
       - [Ejecución](#ejecución)
@@ -22,8 +22,11 @@ Sencilla Api para ser consumida siguiendo REST o GraphQL
     - [Contacto](#contacto)
   - [Licencia](#licencia)
 
-## Instrucciones
+
+## Acerca de
 Esta sencilla api con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL.
+
+![imagen2](./images/rest-graphql2.png)
 
 ### Uso
 #### Instalación
@@ -43,7 +46,7 @@ npm run dev
 
 #### Ejecución con Nodemon
 ```bash
-npm run watch
+npm run dev:watch
 ```
 
 #### Linter
