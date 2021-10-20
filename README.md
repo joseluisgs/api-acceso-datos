@@ -24,7 +24,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 
 
 ## Acerca de
-Esta sencilla api con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL.
+Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes.
 
 ![imagen2](./images/comparable.png)
 
