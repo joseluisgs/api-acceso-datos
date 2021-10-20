@@ -4,7 +4,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178c6)](https://www.typescriptlang.org/)
 [![Code Style](https://img.shields.io/badge/Lint%20Style-AirBnB-ff69b4)](https://airbnb.io/javascript)
 [![Licence](https://img.shields.io/github/license/joseluisgs/photo-gallery-ionic)](./LICENSE)
-![GitHub](https://img.shields.io/github/last-commit/joseluisgs/api-acceso-datps)
+![GitHub](https://img.shields.io/github/last-commit/joseluisgs/api-acceso-datos)
 
 
 ![imagen](./images/rest-graphql.png)
