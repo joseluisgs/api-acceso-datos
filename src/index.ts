@@ -1,16 +1,23 @@
 import express from 'express';
 import { ApolloServer, Config, gql } from 'apollo-server-express';
+import { join } from 'path';
+import { loadTypedefsSync } from '@graphql-tools/load';
+import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 import http from 'http';
 import chalk from 'chalk';
+
 import env from './env';
 import config from './config';
 import router from './router';
+import { DocumentNode } from 'graphql';
 
+
+console.log(env);
 
 class Server {
-  private PORT = env.PORT;
+  private PORT = env.PORT ;
 
-  private restPath =  env.REST_PATH;
+  private restPath =  '/rest';
 
   private app: express.Express;
 
@@ -18,15 +25,20 @@ class Server {
 
   private apolloServer!: ApolloServer;
 
-  // Definición de tipos y Esquemas de GraphQL
-  private typeDefs = gql`
-    type Query {
-      hello: String
-    }
-  `;
+  // Definición de tipos y Esquemas de GraphQL desde fichero
+  // Load schema from the file
+  private sources = loadTypedefsSync(join(__dirname, './graphql/typeDefs.gql'), {
+    loaders: [
+      new GraphQLFileLoader(),
+    ],
+  });
+
+  private typeDefs = this.sources.map((source) => source.document);
+
 
   // Resolver para nuestros Esquemas
   private resolvers = {
+    // Por cada tipo de datos indicamos su resoluciones o funciones a realizar
     Query: {
       hello: () => '¡Hola API GraphQL 👋!',
     },
@@ -46,7 +58,7 @@ class Server {
 
     // Configuración de Apollo server
     const apolloConfig: Config = {
-      typeDefs: this.typeDefs,
+      typeDefs: this.typeDefs as unknown as DocumentNode,
       resolvers: this.resolvers,
     };
     
@@ -55,7 +67,7 @@ class Server {
     await this.apolloServer.start();
     
     // Nuestro Express Server con Apollo
-    this.apolloServer.applyMiddleware({ app: this.app,  });
+    this.apolloServer.applyMiddleware({ app: this.app });
 
     // Iniciamos nuestro servidor GraphQL y REST
     this.servicio = this.app.listen({ port: this.PORT }, () => {

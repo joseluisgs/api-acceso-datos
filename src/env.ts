@@ -17,7 +17,6 @@ const env = {
   HOST: process.env.HOST || 'localhost',
   PORT: Number(process.env.PORT) || 4000,
   TIMEZONE: process.env.TIMEZONE || 'Europe/Madrid',
-  REST_PATH: process.env.REST_PATH || '/rest',
 };
 
 export default env;

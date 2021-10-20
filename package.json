@@ -7,7 +7,7 @@
     "dev": "tsc --watch",
     "dev:watch": "nodemon",
     "dev:run": "ts-node --files src/index.ts",
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && tsc && cp .env ./build && cp -r ./src/graphql ./build",
     "start": "npm run build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
@@ -42,12 +42,16 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^7.3.1",
+    "@graphql-tools/load": "^7.4.0",
     "apollo-server-express": "^3.4.0",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^15.6.1",
+    "graphql-tools": "^8.2.0",
+    "graphql-type-datetime": "^0.2.4",
     "helmet": "^4.6.0",
     "morgan": "^1.10.0"
   }
