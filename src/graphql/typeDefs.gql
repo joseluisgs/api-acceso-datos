@@ -1,0 +1,43 @@
+scalar DateTime
+
+# Tipos para a
+type Query {
+  hello: String
+}
+
+# Tipo Programador
+type Programador {
+  id: ID!
+  nombre: String!
+  experiencia: Int!
+  salario: Float!
+  perfil: Perfil!
+  fechaAlta: DateTime!
+  lenguajes: [Lenguaje!]!
+}
+
+# Departamento
+type Departamento {
+  id: ID!
+  nombre: String!
+  presupuesto: Float!
+  jefe: Programador!
+  programadores: [Programador!]!
+}
+
+
+# Perfil de Programador
+enum Perfil {
+  BackEnd
+  FrontEnd
+  FullStack
+}
+
+# Lenguajes que domina
+enum Lenguaje {
+  Java
+  TypeScript
+  NodeJS
+  VueJS
+}
+
