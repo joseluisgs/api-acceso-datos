@@ -1,9 +1,6 @@
 // Mi Modelo de Datos
 import Departamento from '../model/departamento';
 import Programador from '../model/programador';
-import { Perfil } from '../model/perfil';
-import { Lenguaje } from '../model/lenguaje';
-
 
 const DataBase: {
   departamentos: Departamento[],
@@ -40,9 +37,9 @@ const DataBase: {
       experiencia: 1,
       departamento: '111',
       salario: 20_000,
-      perfil: Perfil.FrontEnd,
+      perfil: 'FrontEnd',
       fechaAlta: new Date('2020-01-01'),
-      lenguajes: [Lenguaje.VueJS, Lenguaje.TypeScript],
+      lenguajes:['VueJS', 'TypeScript'],
     },
     {
       id: '222',
@@ -50,9 +47,9 @@ const DataBase: {
       experiencia: 2,
       departamento: '111',
       salario: 25_000,
-      perfil: Perfil.FrontEnd,
+      perfil: 'FrontEnd',
       fechaAlta: new Date('2020-01-10'),
-      lenguajes: [Lenguaje.VueJS],
+      lenguajes: ['VueJS'],
     },
     {
       id: '333',
@@ -60,9 +57,9 @@ const DataBase: {
       experiencia: 3,
       departamento: '111',
       salario: 28_000,
-      perfil: Perfil.FrontEnd,
+      perfil: 'FrontEnd',
       fechaAlta: new Date('2020-02-01'),
-      lenguajes: [Lenguaje.TypeScript],
+      lenguajes: ['TypeScript'],
     },
     {
       id: '444',
@@ -70,9 +67,9 @@ const DataBase: {
       experiencia: 4,
       departamento: '111',
       salario: 30_000,
-      perfil: Perfil.FrontEnd,
+      perfil: 'FrontEnd',
       fechaAlta: new Date('2020-01-01'),
-      lenguajes: [Lenguaje.VueJS, Lenguaje.TypeScript],
+      lenguajes: ['VueJS', 'TypeScript'],
     },
     {
       id: '555',
@@ -80,9 +77,9 @@ const DataBase: {
       experiencia: 3,
       departamento: '222',
       salario: 30_000,
-      perfil: Perfil.BackEnd,
+      perfil: 'BackEnd',
       fechaAlta: new Date('2021-01-01'),
-      lenguajes: [Lenguaje.Java, Lenguaje.NodeJS],
+      lenguajes: ['Java', 'NodeJS'],
     },
     {
       id: '666',
@@ -90,9 +87,9 @@ const DataBase: {
       experiencia: 1,
       departamento: '222',
       salario: 10_000,
-      perfil: Perfil.BackEnd,
+      perfil: 'BackEnd',
       fechaAlta: new Date('2019-01-01'),
-      lenguajes: [Lenguaje.Java, Lenguaje.NodeJS],
+      lenguajes: ['Java', 'NodeJS'],
     },
     {
       id: '777',
@@ -100,9 +97,9 @@ const DataBase: {
       experiencia: 2,
       departamento: '222',
       salario: 15_000,
-      perfil: Perfil.BackEnd,
+      perfil: 'BackEnd',
       fechaAlta: new Date('2020-04-04'),
-      lenguajes: [Lenguaje.Java, Lenguaje.NodeJS, Lenguaje.TypeScript],
+      lenguajes: ['Java', 'NodeJS', 'TypeScript'],
     },
     {
       id: '888',
@@ -110,9 +107,9 @@ const DataBase: {
       experiencia: 3,
       departamento: '222',
       salario: 23_000,
-      perfil: Perfil.BackEnd,
+      perfil: 'BackEnd',
       fechaAlta: new Date('2020-05-11'),
-      lenguajes: [Lenguaje.Java],
+      lenguajes: ['Java'],
     },
     {
       id: '999',
@@ -120,9 +117,9 @@ const DataBase: {
       experiencia: 5,
       departamento: '333',
       salario: 35_000,
-      perfil: Perfil.FullStack,
+      perfil: 'FullStack',
       fechaAlta: new Date('2021-03-13'),
-      lenguajes: [Lenguaje.TypeScript, Lenguaje.Java, Lenguaje.NodeJS],
+      lenguajes: ['TypeScript', 'Java', 'NodeJS'],
     },
     {
       id: '1000',
@@ -130,9 +127,9 @@ const DataBase: {
       experiencia: 1,
       departamento: '333',
       salario: 20_000,
-      perfil: Perfil.FullStack,
+      perfil: 'FullStack',
       fechaAlta: new Date('2019-06-06'),
-      lenguajes: [Lenguaje.VueJS, Lenguaje.Java, Lenguaje.NodeJS],
+      lenguajes: ['VueJS', 'Java', 'NodeJS', 'TypeScript'],
     },
   ],
 

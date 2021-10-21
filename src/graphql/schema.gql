@@ -12,6 +12,7 @@ type Programador {
   experiencia: Int!
   salario: Float!
   perfil: Perfil!
+  departamento: String! # Relación con Departamento, clave externa, evitar recursividad
   fechaAlta: DateTime!
   lenguajes: [Lenguaje!]!
 }
@@ -21,8 +22,8 @@ type Departamento {
   id: ID!
   nombre: String!
   presupuesto: Float!
-  jefe: Programador!
-  programadores: [Programador!]!
+  jefe: Programador! # Relacion con Programador 1 a 1, aqui si busco el objeto
+  programadores: [Programador!]! # Lista de Programadores 1 a muchos
 }
 
 
@@ -47,11 +48,11 @@ type Query {
 
   # Departamentos
   getDepartamentos: [Departamento!]!
-  getDepartamentoByID(id: ID!): Departamento
+  # getDepartamentoByID(id: ID!): Departamento
 
   # Programadores
   getProgramadores: [Programador!]!
-  getProgramadorByID(id: ID!): Programador
+  # getProgramadorByID(id: ID!): Programador
 }
 
 

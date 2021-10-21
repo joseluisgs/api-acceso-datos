@@ -1,5 +1,3 @@
-import { Perfil } from './perfil';
-import { Lenguaje } from './lenguaje';
 
 export default interface Programador {
   id: string;
@@ -7,7 +5,7 @@ export default interface Programador {
   experiencia: number;
   departamento: string;
   salario: number;
-  perfil: Perfil;
+  perfil: string;
   fechaAlta: Date;
-  lenguajes: Lenguaje[];
+  lenguajes: string[];
 }
