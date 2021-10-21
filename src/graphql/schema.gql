@@ -48,11 +48,15 @@ type Query {
 
   # Departamentos
   getDepartamentos: [Departamento!]!
-  # getDepartamentoByID(id: ID!): Departamento
+  getDepartamentoByID(id: ID!): Departamento
+  getProgramadoresByID(id: ID!): [Programador!]!
+  ## Podriamos buscar por jefe, por presupuesto, etc...
 
   # Programadores
   getProgramadores: [Programador!]!
-  # getProgramadorByID(id: ID!): Programador
+  getProgramadorByID(id: ID!): Programador
+  getProgramadoresByDepartamentoID(departamentoID: String!): [Programador!]!
+  ## Podriamos buscar por jefe, por presupuesto, etc...
 }
 
 

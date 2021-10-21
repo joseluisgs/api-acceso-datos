@@ -1,8 +1,25 @@
 import db from '../data/DataBase';
 
 const ProgramadorService = {
-  getProgramadores() {
+  getAll() {
     return db.programadores;
+  },
+  getByID(id: any) {
+    const programador = db.programadores.find(p => p.id === id);
+    if (programador) {
+      return programador;
+    } else {
+      throw new Error('No existe programador con ID: ' + id);
+    }
+  },
+  getByDepartamentoID(id: any) {
+    console.log(id);
+    const programadores = db.programadores.filter(p => p.departamento == id);
+    if (programadores) {
+      return programadores;
+    } else {
+      throw new Error('No existe departamento con ID: ' + id);
+    }
   },
 };
 

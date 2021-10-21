@@ -8,10 +8,14 @@ const Query = {
   hello: () => '¡Hola API GraphQL 👋!',
 
   // Departamentos
-  getDepartamentos: () => { return DepartamentoService.getDepartamentos(); },
+  getDepartamentos: () => { return DepartamentoService.getAll(); },
+  getDepartamentoByID: (obj: any, args: any) => { return DepartamentoService.getByID(args.id); },
+  getProgramadoresByID: (obj: any, args: any) => { return ProgramadorService.getByDepartamentoID(args.id); },
 
   // Programadores
-  getProgramadores: () => { return ProgramadorService.getProgramadores(); },
+  getProgramadores: () => { return ProgramadorService.getAll(); },
+  getProgramadorByID: (obj: any, args: any) => { return ProgramadorService.getByID(args.id); },
+  getProgramadoresByDepartamentoID: (obj: any, args: any) => { return ProgramadorService.getByDepartamentoID(args.departamentoID); },
   
 };
 
