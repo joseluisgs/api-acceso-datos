@@ -1,11 +1,9 @@
 ## Mi ejemplo Departamento < -- > Programador
 
+# Importo el tipo de dato
 scalar DateTime
 
-# Tipos para a
-type Query {
-  hello: String
-}
+# Tipos de datos de esquema y sus relaciones
 
 # Tipo Programador
 type Programador {
@@ -42,4 +40,18 @@ enum Lenguaje {
   NodeJS
   VueJS
 }
+
+# Querys o puntos de entradas para ser consultados, son nuestros GET
+type Query {
+  hello: String
+
+  # Departamentos
+  getDepartamentos: [Departamento!]!
+  getDepartamentoByID(id: ID!): Departamento
+
+  # Programadores
+  getProgramadores: [Programador!]!
+  getProgramadorByID(id: ID!): Programador
+}
+
 

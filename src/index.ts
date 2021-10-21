@@ -1,8 +1,5 @@
 import express from 'express';
 import { ApolloServer, Config } from 'apollo-server-express';
-import { join } from 'path';
-import { loadTypedefsSync } from '@graphql-tools/load';
-import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 import { AddressInfo } from 'node:net';
 import http from 'http';
 import chalk from 'chalk';
@@ -10,7 +7,8 @@ import chalk from 'chalk';
 import env from './server/env';
 import config from './server/config';
 import router from './server/router';
-import { DocumentNode } from 'graphql';
+import schema from './graphql/schema';
+import resolvers from './graphql/resolvers';
 
 class Server {
   private PORT = env.PORT;
@@ -22,25 +20,6 @@ class Server {
   private servicio!: http.Server;
 
   private apolloServer!: ApolloServer;
-
-  // Definición de tipos y Esquemas de GraphQL desde fichero
-  // Load schema from the file
-  private sources = loadTypedefsSync(join(__dirname, './graphql/typeDefs.gql'), {
-    loaders: [
-      new GraphQLFileLoader(),
-    ],
-  });
-
-  private typeDefs = this.sources.map((source) => source.document);
-
-
-  // Resolver para nuestros Esquemas
-  private resolvers = {
-    // Por cada tipo de datos indicamos su resoluciones o funciones a realizar
-    Query: {
-      hello: () => '¡Hola API GraphQL 👋!',
-    },
-  };
 
   constructor() {
     // Creamos nuestro Express
@@ -56,8 +35,8 @@ class Server {
 
     // Configuración de Apollo server
     const apolloConfig: Config = {
-      typeDefs: this.typeDefs as unknown as DocumentNode,
-      resolvers: this.resolvers,
+      typeDefs: schema,
+      resolvers: resolvers,
     };
     
     // Inicializamos nuestro servidor Apollo con su configuración
