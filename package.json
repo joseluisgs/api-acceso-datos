@@ -7,7 +7,7 @@
     "dev": "tsc --watch",
     "dev:watch": "nodemon",
     "dev:run": "ts-node --files src/index.ts",
-    "build": "rimraf ./build && tsc && cp .env ./build && cp -r ./src/graphql ./build",
+    "build": "rimraf ./build && tsc && cp .env ./build && mkdir ./build/graphql && cp ./src/graphql/*.gql ./build/graphql",
     "start": "npm run build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",

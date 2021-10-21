@@ -3,19 +3,17 @@ import { ApolloServer, Config } from 'apollo-server-express';
 import { join } from 'path';
 import { loadTypedefsSync } from '@graphql-tools/load';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
+import { AddressInfo } from 'node:net';
 import http from 'http';
 import chalk from 'chalk';
 
-import env from './env';
-import config from './config';
-import router from './router';
+import env from './server/env';
+import config from './server/config';
+import router from './server/router';
 import { DocumentNode } from 'graphql';
 
-
-console.log(env);
-
 class Server {
-  private PORT = env.PORT ;
+  private PORT = env.PORT;
 
   private restPath =  '/rest';
 
@@ -71,8 +69,12 @@ class Server {
 
     // Iniciamos nuestro servidor GraphQL y REST
     this.servicio = this.app.listen({ port: this.PORT }, () => {
-      console.log(chalk.magenta(`🚀 Servidor API GraphQL listo en: http://localhost:4000${this.apolloServer.graphqlPath}`));
-      console.log(chalk.blue(`🚀 Servidor API REST listo en: http://localhost:4000${this.restPath}`));
+      // Obtenemos nuestra dirección
+      const address = this.servicio.address() as AddressInfo;
+      const host = address.address === '::' ? 'localhost' : address.address; // dependiendo de la dirección asi configuramos
+
+      console.log(chalk.magenta(`🚀 Servidor API GraphQL listo en: http://${host}:${this.PORT}${this.apolloServer.graphqlPath}`));
+      console.log(chalk.blue(`🚀 Servidor API REST listo en: http://${host}:${this.PORT}${this.restPath}`));
     });
   }
 

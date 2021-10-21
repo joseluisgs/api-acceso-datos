@@ -19,4 +19,6 @@ const env = {
   TIMEZONE: process.env.TIMEZONE || 'Europe/Madrid',
 };
 
+// console.log('ENV: ', env);
+
 export default env;
