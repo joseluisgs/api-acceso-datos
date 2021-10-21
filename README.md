@@ -18,6 +18,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
       - [Ejecución con Nodemon](#ejecución-con-nodemon)
       - [Linter](#linter)
   - [Extensiones de interés](#extensiones-de-interés)
+  - [Postman](#postman)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
@@ -59,8 +60,9 @@ npm run lint:fix
 ## Extensiones de interés
 - GraphQL: Para visualizar y lanzar tus consultas GraphQL.
 - ThunderClient: Para visualizar y lanzar tus consultas REST.
-- Clie
 
+## Postman
+Se incluye el fichero para usar y ver las consultas con Postman.
 
 ## Autor
 
