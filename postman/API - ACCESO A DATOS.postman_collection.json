@@ -9,6 +9,250 @@
 			"name": "GrapQL",
 			"item": [
 				{
+					"name": "Departamentos",
+					"item": [
+						{
+							"name": "GET Departamentos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query {\n  getDepartamentos {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n      perfil\n      fechaAlta\n    }\n    programadores {\n      nombre\n      experiencia\n      salario\n      perfil\n      fechaAlta\n      lenguajes\n    }\n  }\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Departamento By ID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($getDepartamentoByIdId: ID!) {\n  getDepartamentoByID(id: $getDepartamentoByIdId) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      salario\n    }\n    programadores {\n      nombre\n      perfil\n      lenguajes\n      fechaAlta\n    }\n  }\n}",
+										"variables": "{\n  \"getDepartamentoByIdId\": 111\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Departamento ID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($getProgramadoresByIdId: ID!) {\n  getProgramadoresByID(id: $getProgramadoresByIdId) {\n    nombre\n    experiencia\n    salario\n    perfil\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"getProgramadoresByIdId\": 111\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Jefe By Departamento ID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($getJefeByIdId: ID!) {\n  getJefeByID(id: $getJefeByIdId) {\n    nombre\n    experiencia\n    salario\n    perfil\n    fechaAlta\n    lenguajes\n    departamento\n  }\n}",
+										"variables": "{\n  \"getJefeByIdId\": 111\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Programadores",
+					"item": [
+						{
+							"name": "GET Programadores",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query {\n  getProgramadores {\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programador By ID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($getProgramadorByIdId: ID!) {\n  getProgramadorByID(id: $getProgramadorByIdId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"getProgramadorByIdId\": 111\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Departamento ID ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($departamentoId: String!) {\n  getProgramadoresByDepartamentoID(departamentoID: $departamentoId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"departamentoId\": \"222\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Perfil",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($perfil: String!) {\n  getProgramadoresByPerfil(perfil: $perfil) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"perfil\": \"FullStack\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Lenguaje",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query Query($lenguaje: String!) {\n  getProgramadoresByLenguaje(lenguaje: $lenguaje) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"lenguaje\": \"VueJS\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "hello",
 					"request": {
 						"method": "POST",
@@ -33,246 +277,234 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "REST",
+			"item": [
 				{
-					"name": "GET Departamentos",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query {\n  getDepartamentos {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n      perfil\n      fechaAlta\n    }\n    programadores {\n      nombre\n      experiencia\n      salario\n      perfil\n      fechaAlta\n      lenguajes\n    }\n  }\n}",
-								"variables": ""
-							}
+					"name": "Departamento",
+					"item": [
+						{
+							"name": "GET Departamentos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento"
+									]
+								}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
+						{
+							"name": "GET Departamento By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Departamento ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111/programadores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111",
+										"programadores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Jefe By Departamento ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111/jefe",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111",
+										"jefe"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "GET Departamento By ID",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($getDepartamentoByIdId: ID!) {\n  getDepartamentoByID(id: $getDepartamentoByIdId) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      salario\n    }\n    programadores {\n      nombre\n      perfil\n      lenguajes\n      fechaAlta\n    }\n  }\n}",
-								"variables": "{\n  \"getDepartamentoByIdId\": 111\n}"
-							}
+					"name": "Programadores",
+					"item": [
+						{
+							"name": "GET Programadores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador"
+									]
+								}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
+						{
+							"name": "GET Programador By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										"111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Departamento ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/departamento/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										"departamento",
+										"111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Perfil",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/perfil/FullStack",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										"perfil",
+										"FullStack"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Programadores By Lenguaje",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/lenguaje/VueJS",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										"lenguaje",
+										"VueJS"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "GET Programadors By Departamento ID",
+					"name": "hello",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($getProgramadoresByIdId: ID!) {\n  getProgramadoresByID(id: $getProgramadoresByIdId) {\n    nombre\n    experiencia\n    salario\n    perfil\n    fechaAlta\n    lenguajes\n  }\n}",
-								"variables": "{\n  \"getProgramadoresByIdId\": 111\n}"
-							}
-						},
 						"url": {
-							"raw": "http://localhost:4000/graphql",
+							"raw": "http://localhost:4000/rest",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Jefe By Departamento ID",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($getJefeByIdId: ID!) {\n  getJefeByID(id: $getJefeByIdId) {\n    nombre\n    experiencia\n    salario\n    perfil\n    fechaAlta\n    lenguajes\n    departamento\n  }\n}",
-								"variables": "{\n  \"getJefeByIdId\": 111\n}"
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Programadores",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query {\n  getProgramadores {\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-								"variables": ""
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Programador By ID",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($getProgramadorByIdId: ID!) {\n  getProgramadorByID(id: $getProgramadorByIdId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-								"variables": "{\n  \"getProgramadorByIdId\": 111\n}"
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Programadores By Departamento ID ",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($departamentoId: String!) {\n  getProgramadoresByDepartamentoID(departamentoID: $departamentoId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-								"variables": "{\n  \"departamentoId\": \"222\"\n}"
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Programadores By Perfil",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($perfil: String!) {\n  getProgramadoresByPerfil(perfil: $perfil) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-								"variables": "{\n  \"perfil\": \"FullStack\"\n}"
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Programadores By Lenguaje",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "query Query($lenguaje: String!) {\n  getProgramadoresByLenguaje(lenguaje: $lenguaje) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-								"variables": "{\n  \"lenguaje\": \"VueJS\"\n}"
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4000/graphql",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"graphql"
+								"rest"
 							]
 						}
 					},
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "REST",
-			"item": []
 		}
 	]
 }
