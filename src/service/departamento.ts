@@ -41,6 +41,14 @@ const DepartamentoService = {
       throw new Error('No existe departamento con ID: ' + id);
     }
   },
+  getJefeByID(id: any) {
+    const departamento = db.departamentos.find(d => d.id === id);
+    if (departamento) {
+      return db.programadores.find(programador => programador.id === departamento.jefe);
+    } else {
+      throw new Error('No existe departamento con ID: ' + id);
+    }
+  },
 };
 
 export default DepartamentoService;

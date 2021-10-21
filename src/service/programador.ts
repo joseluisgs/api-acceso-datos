@@ -21,6 +21,23 @@ const ProgramadorService = {
       throw new Error('No existe departamento con ID: ' + id);
     }
   },
+  getByPerfil(perfil: any) {
+    console.log(perfil);
+    const programadores = db.programadores.filter(p => p.perfil == perfil);
+    if (programadores) {
+      return programadores;
+    } else {
+      throw new Error('No existe perfil: ' + perfil);
+    }
+  },
+  getByLenguaje(lenguaje: any) {
+    const programadores = db.programadores.filter(p => p.lenguajes.includes(lenguaje));
+    if (programadores) {
+      return programadores;
+    } else {
+      throw new Error('No existe lenguaje: ' + lenguaje);
+    }
+  },
 };
 
 export default ProgramadorService;
