@@ -4,6 +4,8 @@
 */
 
 import express from 'express';
+import departamento from '../rest/departamento';
+import programador from '../rest/programador';
 
 // exportamos los módulos
 export default (app: express.Express, restPath: string) => {
@@ -17,4 +19,11 @@ export default (app: express.Express, restPath: string) => {
         },
       }));
   });
+  
+  // Departamentos 
+  app.use(restPath + '/departamento', departamento);
+
+  // Departamentos 
+  app.use(restPath + '/programador', programador);
+
 };
