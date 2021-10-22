@@ -44,10 +44,16 @@ const Mutation = {
   addDepartamento: (obj: any, { nombre, presupuesto, id_jefe }: any) => {
     return DepartamentoService.addDepartamento(nombre, presupuesto, id_jefe);
   },
+  deleteDepartamento: (obj: any, { id }: any) => {
+    return DepartamentoService.deleteDepartamentoByID(id);
+  },
 
   // Programadores
   addProgramador: (obj: any, { nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes }: any) => {
     return ProgramadorService.addProgramador(nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes);
+  },
+  deleteProgramador: (obj: any, { id }: any) => {
+    return ProgramadorService.deleteProgramadorByID(id);
   },
 };
 

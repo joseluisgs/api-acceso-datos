@@ -4,6 +4,7 @@ import DepartamentoDTO from '../dto/departamento';
 import DepartamentoMapper from '../mapper/departamento';
 
 const DepartamentoService = {
+
   getAll() {
     const departamentos = db.departamentos;
     let lista : DepartamentoDTO[] = []; 
@@ -13,6 +14,7 @@ const DepartamentoService = {
     });
     return lista;
   },
+
   getByID(id: any) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
@@ -21,6 +23,7 @@ const DepartamentoService = {
       throw new Error('No existe departamento con ID: ' + id);
     }
   },
+
   getProgramadorByID(id: any) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
@@ -29,6 +32,7 @@ const DepartamentoService = {
       throw new Error('No existe departamento con ID: ' + id);
     }
   },
+
   getJefeByID(id: any) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
@@ -48,6 +52,16 @@ const DepartamentoService = {
     };
     db.departamentos.push(departamento);
     return DepartamentoMapper.toDTO(departamento);
+  },
+
+  deleteDepartamentoByID(id: string) {
+    const departamento = db.departamentos.find(d => d.id === id);
+    if (departamento) {
+      db.departamentos = db.departamentos.filter(d => d.id !== id);
+      return DepartamentoMapper.toDTO(departamento);
+    } else {
+      throw new Error('No existe departamento con ID: ' + id);
+    }
   },
 };
 

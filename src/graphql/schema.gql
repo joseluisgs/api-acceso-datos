@@ -66,8 +66,10 @@ type Query {
 type Mutation {
   # Departamentos
   addDepartamento(nombre: String!, presupuesto: Float!, id_jefe: String!): Departamento
+  deleteDepartamento(id: ID!): Departamento
   
   # Programadores
   addProgramador(nombre: String!, experiencia: Int!, salario: Float!, perfil: Perfil!, departamento_id: String!, fechaAlta: DateTime!, lenguajes: [Lenguaje!]! ): Programador
+  deleteProgramador(id: ID!): Programador
 }
 
