@@ -1,5 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
 import db from '../data/DataBase';
 import DepartamentoDTO from '../dto/departamento';
+import DepartamentoMapper from '../mapper/departamento';
 
 const DepartamentoService = {
   getAll() {
@@ -7,28 +9,14 @@ const DepartamentoService = {
     let lista : DepartamentoDTO[] = []; 
     // Recorremos todos los departamentos para asignarles los empleados
     departamentos.forEach((departamento) => {
-      let dep: DepartamentoDTO = {
-        id: departamento.id,
-        nombre: departamento.nombre,
-        presupuesto: departamento.presupuesto,
-        jefe: db.programadores.find(programador => programador.id === departamento.jefe),
-        programadores: db.programadores.filter(programador => programador.departamento === departamento.id),
-      };
-      lista.push(dep);
+      lista.push(DepartamentoMapper.toDTO(departamento));
     });
     return lista;
   },
   getByID(id: any) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
-      let dep: DepartamentoDTO = {
-        id: departamento.id,
-        nombre: departamento.nombre,
-        presupuesto: departamento.presupuesto,
-        jefe: db.programadores.find(programador => programador.id === departamento.jefe),
-        programadores: db.programadores.filter(programador => programador.departamento === departamento.id),
-      };
-      return dep;
+      return DepartamentoMapper.toDTO(departamento);
     } else {
       throw new Error('No existe departamento con ID: ' + id);
     }
@@ -48,6 +36,18 @@ const DepartamentoService = {
     } else {
       throw new Error('No existe departamento con ID: ' + id);
     }
+  },
+
+  addDepartamento(nombre: string, presupuesto: number, id_jefe: string) {
+    const departamento = {
+      id: uuidv4(),
+      nombre,
+      presupuesto,
+      jefe: id_jefe,
+      programadores: [],
+    };
+    db.departamentos.push(departamento);
+    return DepartamentoMapper.toDTO(departamento);
   },
 };
 

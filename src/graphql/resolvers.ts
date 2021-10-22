@@ -21,10 +21,17 @@ const Query = {
   getProgramadoresByLenguaje: (obj: any, args: any) => { return ProgramadorService.getByLenguaje(args.lenguaje); },
 };
 
+const Mutation = {
+  // Departamentos
+  addDepartamento: (obj: any, { nombre, presupuesto, id_jefe }: any) => { return DepartamentoService.addDepartamento(nombre, presupuesto, id_jefe); },
+
+};
+
 const resolvers = {
   // Por cada tipo de datos indicamos su resoluciones o funciones a realizar
   Query,
   // Mutaciones
+  Mutation,
 
   // Suscripciones
 };

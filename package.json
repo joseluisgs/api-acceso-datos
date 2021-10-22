@@ -32,6 +32,7 @@
     "@types/faker": "^5.5.9",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.1",
+    "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "eslint": "^8.0.1",
@@ -54,6 +55,7 @@
     "graphql-tools": "^8.2.0",
     "graphql-type-datetime": "^0.2.4",
     "helmet": "^4.6.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
   }
 }

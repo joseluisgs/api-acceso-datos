@@ -23,7 +23,7 @@ type Departamento {
   nombre: String!
   presupuesto: Float!
   jefe: Programador! # Relacion con Programador 1 a 1, aqui si busco el objeto
-  programadores: [Programador!]! # Lista de Programadores 1 a muchos
+  programadores: [Programador] # Lista de Programadores 1 a muchos pero pude ser vacía
 }
 
 
@@ -42,24 +42,30 @@ enum Lenguaje {
   VueJS
 }
 
-# Querys o puntos de entradas para ser consultados, son nuestros GET
+# Querys o puntos de entradas para consultar datos, son nuestros GET
 type Query {
   hello: String
 
   # Departamentos
   getDepartamentos: [Departamento!]!
-  getDepartamentoByID(id: ID!): Departamento!
-  getProgramadoresByID(id: ID!): [Programador!]!
+  getDepartamentoByID(id: ID!): Departamento
+  getProgramadoresByID(id: ID!): [Programador]
   getJefeByID(id: ID!): Programador!
   ## Podriamos buscar por jefe, por presupuesto, etc...
 
   # Programadores
   getProgramadores: [Programador!]!
   getProgramadorByID(id: ID!): Programador
-  getProgramadoresByDepartamentoID(departamentoID: String!): [Programador!]!
-  getProgramadoresByPerfil(perfil: String!): [Programador!]!
-  getProgramadoresByLenguaje(lenguaje: String!): [Programador!]!
+  getProgramadoresByDepartamentoID(departamentoID: String!): [Programador] #Puede ser vacío
+  getProgramadoresByPerfil(perfil: String!): [Programador]
+  getProgramadoresByLenguaje(lenguaje: String!): [Programador]
   ## Podriamos buscar por jefe, por presupuesto, etc...
 }
 
+# Mutaciones o punttos de entrada para modifica/mutar nuestros datos, son nuestros POT, UPDATE, PATCH y DELETE
+
+type Mutation {
+  addDepartamento(nombre: String!, presupuesto: Float!, id_jefe: String!): Departamento
+  addEmpleado(nombre: String!, experiencia: Int!, salario: Float!, perfil: Perfil!, departamento_id: String!, fechaAlta: DateTime!, lenguaje: [Lenguaje!]! ): Programador
+}
 
