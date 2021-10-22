@@ -53,6 +53,22 @@ departamentoRouter.get('/:id/jefe', (req: Request, res: Response) => {
   }
 });
 
+// POST Inserta un departamento
+departamentoRouter.post('/', (req: Request, res: Response) => {
+  try {
+    return res.status(201).json(
+      DepartamentoService.addDepartamento(req.body.nombre, req.body.presupuesto, req.body.id_jefe),
+    );
+  } catch (err: any) {
+    return res.status(500).json({
+      success: false,
+      mensaje: err.toString(),
+    });
+  }
+});
+
+
+
 
 
 export default departamentoRouter;

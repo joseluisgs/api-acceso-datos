@@ -66,5 +66,21 @@ programadorRouter.get('/lenguaje/:lenguaje', (req: Request, res: Response) => {
   }
 });
 
+// POST Inserta un Programador
+programadorRouter.post('/', (req: Request, res: Response) => {
+  try {
+    return res.status(201).json(
+      ProgramadorService.addProgramador(req.body.nombre, req.body.experiencia, req.body.salario, req.body.perfil,
+        req.body.departamento_id, req.body.fechaAlta, req.body.lenguajes),
+    );
+  } catch (err: any) {
+    return res.status(500).json({
+      success: false,
+      mensaje: err.toString(),
+    });
+  }
+});
+
+
 
 export default programadorRouter;
