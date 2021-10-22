@@ -8,23 +8,47 @@ const Query = {
   hello: () => '¡Hola API GraphQL 👋!',
 
   // Departamentos
-  getDepartamentos: () => { return DepartamentoService.getAll(); },
-  getDepartamentoByID: (obj: any, args: any) => { return DepartamentoService.getByID(args.id); },
-  getProgramadoresByID: (obj: any, args: any) => { return DepartamentoService.getProgramadorByID((args.id)); },
-  getJefeByID: (obj: any, args: any) => { return DepartamentoService.getJefeByID(args.id); },
+  getDepartamentos: () => {
+    return DepartamentoService.getAll();
+  },
+  getDepartamentoByID: (obj: any, { id }: any) => {
+    return DepartamentoService.getByID(id);
+  },
+  getProgramadoresByID: (obj: any, { id }: any) => {
+    return DepartamentoService.getProgramadorByID((id));
+  },
+  getJefeByID: (obj: any, { id }: any) => {
+    return DepartamentoService.getJefeByID(id);
+  },
 
   // Programadores
-  getProgramadores: () => { return ProgramadorService.getAll(); },
-  getProgramadorByID: (obj: any, args: any) => { return ProgramadorService.getByID(args.id); },
-  getProgramadoresByDepartamentoID: (obj: any, args: any) => { return ProgramadorService.getByDepartamentoID(args.departamentoID); },
-  getProgramadoresByPerfil: (obj: any, args: any) => { return ProgramadorService.getByPerfil(args.perfil); },
-  getProgramadoresByLenguaje: (obj: any, args: any) => { return ProgramadorService.getByLenguaje(args.lenguaje); },
+  getProgramadores: () => {
+    return ProgramadorService.getAll();
+  },
+  getProgramadorByID: (obj: any, { id }: any) => {
+    return ProgramadorService.getByID(id);
+  },
+  getProgramadoresByDepartamentoID: (obj: any, { departamentoID }: any) => {
+    return ProgramadorService.getByDepartamentoID(departamentoID);
+  },
+  getProgramadoresByPerfil: (obj: any, { perfil }: any) => {
+    return ProgramadorService.getByPerfil(perfil);
+  },
+  getProgramadoresByLenguaje: (obj: any, { lenguaje }: any) => {
+    return ProgramadorService.getByLenguaje(lenguaje);
+  },
 };
 
 const Mutation = {
   // Departamentos
-  addDepartamento: (obj: any, { nombre, presupuesto, id_jefe }: any) => { return DepartamentoService.addDepartamento(nombre, presupuesto, id_jefe); },
+  addDepartamento: (obj: any, { nombre, presupuesto, id_jefe }: any) => {
+    return DepartamentoService.addDepartamento(nombre, presupuesto, id_jefe);
+  },
 
+  // Programadores
+  addProgramador: (obj: any, { nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes }: any) => {
+    return ProgramadorService.addProgramador(nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes);
+  },
 };
 
 const resolvers = {

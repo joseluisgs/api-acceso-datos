@@ -63,9 +63,11 @@ type Query {
 }
 
 # Mutaciones o punttos de entrada para modifica/mutar nuestros datos, son nuestros POT, UPDATE, PATCH y DELETE
-
 type Mutation {
+  # Departamentos
   addDepartamento(nombre: String!, presupuesto: Float!, id_jefe: String!): Departamento
-  addEmpleado(nombre: String!, experiencia: Int!, salario: Float!, perfil: Perfil!, departamento_id: String!, fechaAlta: DateTime!, lenguaje: [Lenguaje!]! ): Programador
+  
+  # Programadores
+  addProgramador(nombre: String!, experiencia: Int!, salario: Float!, perfil: Perfil!, departamento_id: String!, fechaAlta: DateTime!, lenguajes: [Lenguaje!]! ): Programador
 }
 
