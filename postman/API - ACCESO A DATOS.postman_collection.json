@@ -114,6 +114,58 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "POST Departamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation Mutation($nombre: String!, $presupuesto: Float!, $idJefe: String!) {\n  addDepartamento(nombre: $nombre, presupuesto: $presupuesto, id_jefe: $idJefe) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n      perfil\n    }\n  }\n}",
+										"variables": "{\n  \"nombre\": \"Departamento Insert\",\n  \"presupuesto\": 20000,\n  \"idJefe\": \"888\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Departamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteDepartamentoMutation($deleteDepartamentoId: ID!) {\n  deleteDepartamento(id: $deleteDepartamentoId) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n      id\n    }\n    programadores {\n      id\n      nombre\n      experiencia\n      salario\n      perfil\n    }\n  }\n}",
+										"variables": "{\n  \"deleteDepartamentoId\": \"111\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -234,6 +286,58 @@
 									"graphql": {
 										"query": "query Query($lenguaje: String!) {\n  getProgramadoresByLenguaje(lenguaje: $lenguaje) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
 										"variables": "{\n  \"lenguaje\": \"VueJS\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Empleado",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProgramadorMutation($nombre: String!, $experiencia: Int!, $salario: Float!, $perfil: Perfil!, $departamentoId: String!, $fechaAlta: DateTime!, $lenguajes: [Lenguaje!]!) {\n  addProgramador(nombre: $nombre, experiencia: $experiencia, salario: $salario, perfil: $perfil, departamento_id: $departamentoId, fechaAlta: $fechaAlta, lenguajes: $lenguajes) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"nombre\": \"Programador Prueba\",\n  \"experiencia\": 2,\n  \"salario\": 30000,\n  \"perfil\": \"FullStack\",\n  \"departamentoId\": \"333\",\n  \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n  \"lenguajes\": [\"Java\", \"TypeScript\"]\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Programador",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation DeleteProgramadorMutation($deleteProgramadorId: ID!) {\n  deleteProgramador(id: $deleteProgramadorId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"deleteProgramadorId\": \"222\"\n}"
 									}
 								},
 								"url": {
@@ -370,6 +474,57 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "POST Departamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Departamento Insert\",\n    \"presupuesto\": \"20000\",\n    \"id_jefe\": \"111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Departamento",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -478,6 +633,57 @@
 										"programador",
 										"lenguaje",
 										"VueJS"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Programador",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Departamento Insert\",\n    \"experiencia\": 2,\n    \"salario\": 200000,\n    \"perfil\": \"FullStack\",\n    \"departamento_id\": \"222\",\n    \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n    \"lenguajes\": [\"Java\", \"TypeScript\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Programador",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										"111"
 									]
 								}
 							},
