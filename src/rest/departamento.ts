@@ -67,6 +67,18 @@ departamentoRouter.post('/', (req: Request, res: Response) => {
   }
 });
 
+// DELETE Elimina un Departamento dado su ID
+departamentoRouter.delete('/:id', (req: Request, res: Response) => {
+  try {
+    return res.status(200).json(DepartamentoService.deleteDepartamentoByID(req.params.id));
+  } catch (err: any) {
+    return res.status(500).json({
+      success: false,
+      mensaje: err.toString(),
+    });
+  }
+});
+
 
 
 

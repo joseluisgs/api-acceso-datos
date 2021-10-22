@@ -81,6 +81,19 @@ programadorRouter.post('/', (req: Request, res: Response) => {
   }
 });
 
+// DELETE Elimina un Programador dado su ID
+programadorRouter.delete('/:id', (req: Request, res: Response) => {
+  try {
+    return res.status(200).json(ProgramadorService.deleteProgramadorByID(req.params.id));
+  } catch (err: any) {
+    return res.status(500).json({
+      success: false,
+      mensaje: err.toString(),
+    });
+  }
+});
+
+
 
 
 export default programadorRouter;
