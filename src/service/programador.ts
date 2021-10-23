@@ -7,7 +7,7 @@ const ProgramadorService = {
     return db.programadores;
   },
 
-  getByID(id: any) {
+  getByID(id: string) {
     const programador = db.programadores.find(p => p.id === id);
     if (programador) {
       return programador;
@@ -16,7 +16,7 @@ const ProgramadorService = {
     }
   },
 
-  getByDepartamentoID(id: any) {
+  getByDepartamentoID(id: string) {
     console.log(id);
     const programadores = db.programadores.filter(p => p.departamento == id);
     if (programadores) {
@@ -26,7 +26,7 @@ const ProgramadorService = {
     }
   },
 
-  getByPerfil(perfil: any) {
+  getByPerfil(perfil: string) {
     console.log(perfil);
     const programadores = db.programadores.filter(p => p.perfil == perfil);
     if (programadores) {
@@ -36,7 +36,7 @@ const ProgramadorService = {
     }
   },
 
-  getByLenguaje(lenguaje: any) {
+  getByLenguaje(lenguaje: string) {
     const programadores = db.programadores.filter(p => p.lenguajes.includes(lenguaje));
     if (programadores) {
       return programadores;
@@ -69,6 +69,23 @@ const ProgramadorService = {
     } else {
       throw new Error('No existe departamento con ID: ' + id);
     }
+  },
+
+  updateProgramador(id: string, nombre: string, experiencia: number, salario: number, perfil: string, departamento_id: string,
+    fechaAlta: Date, lenguajes: string[]) {
+    const programador = db.programadores.find(p => p.id === id);
+    if (programador) {
+      programador.nombre = nombre;
+      programador.experiencia = experiencia;
+      programador.salario = salario;
+      programador.perfil = perfil;
+      programador.departamento = departamento_id;
+      programador.fechaAlta = fechaAlta;
+      programador.lenguajes = lenguajes;
+      db.programadores = db.programadores.map(p => p.id !== programador.id ? p : programador);
+      return programador;
+    }
+    throw new Error('No existe programador con ID: ' + id);
   },
 };
 

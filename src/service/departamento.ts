@@ -15,7 +15,7 @@ const DepartamentoService = {
     return lista;
   },
 
-  getByID(id: any) {
+  getByID(id: string) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
       return DepartamentoMapper.toDTO(departamento);
@@ -24,7 +24,7 @@ const DepartamentoService = {
     }
   },
 
-  getProgramadorByID(id: any) {
+  getProgramadorByID(id: string) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
       return db.programadores.filter(programador => programador.departamento === departamento.id);
@@ -33,7 +33,7 @@ const DepartamentoService = {
     }
   },
 
-  getJefeByID(id: any) {
+  getJefeByID(id: string) {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
       return db.programadores.find(programador => programador.id === departamento.jefe);
@@ -58,6 +58,19 @@ const DepartamentoService = {
     const departamento = db.departamentos.find(d => d.id === id);
     if (departamento) {
       db.departamentos = db.departamentos.filter(d => d.id !== id);
+      return DepartamentoMapper.toDTO(departamento);
+    } else {
+      throw new Error('No existe departamento con ID: ' + id);
+    }
+  },
+
+  updateDepartamento(id: string, nombre: string, presupuesto: number, id_jefe: string) {
+    const departamento = db.departamentos.find(d => d.id === id);
+    if (departamento) {
+      departamento.nombre = nombre;
+      departamento.presupuesto = presupuesto;
+      departamento.jefe = id_jefe;
+      db.departamentos = db.departamentos.map(d => d.id !== departamento.id ? d : departamento);
       return DepartamentoMapper.toDTO(departamento);
     } else {
       throw new Error('No existe departamento con ID: ' + id);

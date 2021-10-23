@@ -11,12 +11,15 @@ const Query = {
   getDepartamentos: () => {
     return DepartamentoService.getAll();
   },
+
   getDepartamentoByID: (obj: any, { id }: any) => {
     return DepartamentoService.getByID(id);
   },
+
   getProgramadoresByID: (obj: any, { id }: any) => {
     return DepartamentoService.getProgramadorByID((id));
   },
+
   getJefeByID: (obj: any, { id }: any) => {
     return DepartamentoService.getJefeByID(id);
   },
@@ -25,35 +28,50 @@ const Query = {
   getProgramadores: () => {
     return ProgramadorService.getAll();
   },
+
   getProgramadorByID: (obj: any, { id }: any) => {
     return ProgramadorService.getByID(id);
   },
+
   getProgramadoresByDepartamentoID: (obj: any, { departamentoID }: any) => {
     return ProgramadorService.getByDepartamentoID(departamentoID);
   },
+
   getProgramadoresByPerfil: (obj: any, { perfil }: any) => {
     return ProgramadorService.getByPerfil(perfil);
   },
+
   getProgramadoresByLenguaje: (obj: any, { lenguaje }: any) => {
     return ProgramadorService.getByLenguaje(lenguaje);
   },
 };
 
 const Mutation = {
+
   // Departamentos
   addDepartamento: (obj: any, { nombre, presupuesto, id_jefe }: any) => {
     return DepartamentoService.addDepartamento(nombre, presupuesto, id_jefe);
   },
+
   deleteDepartamento: (obj: any, { id }: any) => {
     return DepartamentoService.deleteDepartamentoByID(id);
+  },
+
+  updateDepartamento: (obj: any, { id, nombre, presupuesto, id_jefe }: any) => {
+    return DepartamentoService.updateDepartamento(id, nombre, presupuesto, id_jefe);
   },
 
   // Programadores
   addProgramador: (obj: any, { nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes }: any) => {
     return ProgramadorService.addProgramador(nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes);
   },
+
   deleteProgramador: (obj: any, { id }: any) => {
     return ProgramadorService.deleteProgramadorByID(id);
+  },
+
+  updateProgramador: (obj: any, { id, nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes }: any) => {
+    return ProgramadorService.updateProgramador(id, nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes);
   },
 };
 
