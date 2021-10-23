@@ -99,6 +99,25 @@ const DepartamentoService = {
     }
   },
 
+  removeProgramadorDepartamento(id: string, id_programador: string) {
+    // Buscamos el departamento
+    const departamento = db.departamentos.find(d => d.id === id);
+    if (departamento) {
+      // Buscamos el programador
+      const programador = db.programadores.find(p => p.id === id_programador);
+      if (programador) {
+        //Actualizamos eliminando el programador de ese departamento
+        departamento.programadores = departamento.programadores.filter(p => p !== id_programador);
+        programador.departamento = '';
+        return DepartamentoMapper.toDTO(departamento);
+      } else {
+        throw new Error('No existe programador con ID: ' + id_programador);
+      }
+    } else {
+      throw new Error('No existe departamento con ID: ' + id);
+    }
+  },
+
 };
 
 export default DepartamentoService;

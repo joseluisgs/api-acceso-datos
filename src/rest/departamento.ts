@@ -95,7 +95,7 @@ departamentoRouter.put('/:id', (req: Request, res: Response) => {
 
 // UPDATE Añade Programador a Departamento
 // Podria pasarle un JSON con los datos por body
-departamentoRouter.put('/:id/add_programador/:id_programador', (req: Request, res: Response) => {
+departamentoRouter.patch('/:id/add_programador/:id_programador', (req: Request, res: Response) => {
   try {
     return res.status(200).json(
       DepartamentoService.addProgramadorDepartamento(req.params.id, req.params.id_programador),
@@ -107,6 +107,23 @@ departamentoRouter.put('/:id/add_programador/:id_programador', (req: Request, re
     });
   }
 });
+
+// UPDATE Elimina Programador a Departamento
+// Podria pasarle un JSON con los datos por body
+departamentoRouter.patch('/:id/remove_programador/:id_programador', (req: Request, res: Response) => {
+  try {
+    return res.status(200).json(
+      DepartamentoService.removeProgramadorDepartamento(req.params.id, req.params.id_programador),
+    );
+  } catch (err: any) {
+    return res.status(500).json({
+      success: false,
+      mensaje: err.toString(),
+    });
+  }
+});
+
+
 
 
 

@@ -65,9 +65,9 @@ const Mutation = {
     return DepartamentoService.addProgramadorDepartamento(id, id_programador);
   },
 
-  // removeProgramadorDepartamento: (obj: any, { id, id_programador }: any) => {
-  //   return DepartamentoService.removeProgramadorDepartamento(id, id_programador);
-  // },
+  removeProgramadorDepartamento: (obj: any, { id, id_programador }: any) => {
+    return DepartamentoService.removeProgramadorDepartamento(id, id_programador);
+  },
 
   // Programadores
   addProgramador: (obj: any, { nombre, experiencia, salario, perfil, departamento_id, fechaAlta, lenguajes }: any) => {
