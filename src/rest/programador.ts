@@ -93,6 +93,21 @@ programadorRouter.delete('/:id', (req: Request, res: Response) => {
   }
 });
 
+// UPDATE Actualiza un elemento dado su id
+programadorRouter.put('/:id', (req: Request, res: Response) => {
+  try {
+    return res.status(200).json(
+      ProgramadorService.updateProgramador(req.params.id, req.body.nombre, req.body.experiencia, req.body.salario,
+        req.body.perfil, req.body.departamento_id, req.body.fechaAlta, req.body.lenguajes),
+    );
+  } catch (err: any) {
+    return res.status(500).json({
+      success: false,
+      mensaje: err.toString(),
+    });
+  }
+});
+
 
 
 
