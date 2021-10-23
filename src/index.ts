@@ -13,7 +13,7 @@ import resolvers from './graphql/resolvers';
 class Server {
   private PORT = env.PORT;
 
-  private restPath =  '/rest';
+  private restPath = '/rest';
 
   private app: express.Express;
 
@@ -38,11 +38,11 @@ class Server {
       typeDefs: schema,
       resolvers: resolvers,
     };
-    
+
     // Inicializamos nuestro servidor Apollo con su configuración
     this.apolloServer = new ApolloServer(apolloConfig);
     await this.apolloServer.start();
-    
+
     // Nuestro Express Server con Apollo
     this.apolloServer.applyMiddleware({ app: this.app });
 

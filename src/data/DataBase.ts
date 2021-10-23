@@ -39,7 +39,7 @@ const DataBase: {
       salario: 20_000,
       perfil: 'FrontEnd',
       fechaAlta: new Date('2020-01-01'),
-      lenguajes:['VueJS', 'TypeScript'],
+      lenguajes: ['VueJS', 'TypeScript'],
     },
     {
       id: '222',

@@ -123,11 +123,4 @@ departamentoRouter.patch('/:id/remove_programador/:id_programador', (req: Reques
   }
 });
 
-
-
-
-
-
-
-
 export default departamentoRouter;

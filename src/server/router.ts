@@ -19,7 +19,7 @@ export default (app: express.Express, restPath: string) => {
         },
       }));
   });
-  
+
   // Departamentos 
   app.use(restPath + '/departamento', departamento);
 

@@ -108,7 +108,4 @@ programadorRouter.put('/:id', (req: Request, res: Response) => {
   }
 });
 
-
-
-
 export default programadorRouter;

@@ -7,7 +7,7 @@ const DepartamentoService = {
 
   getAll() {
     const departamentos = db.departamentos;
-    let lista : DepartamentoDTO[] = []; 
+    let lista: DepartamentoDTO[] = [];
     // Recorremos todos los departamentos para asignarles los empleados
     departamentos.forEach((departamento) => {
       lista.push(DepartamentoMapper.toDTO(departamento));
@@ -85,7 +85,7 @@ const DepartamentoService = {
       const programador = db.programadores.find(p => p.id === id_programador);
       if (programador) {
         const depEmpleado = db.departamentos.find(d => d.programadores.find(p => p === id_programador));
-        if (depEmpleado) 
+        if (depEmpleado)
           depEmpleado.programadores = depEmpleado.programadores.filter(p => p !== id_programador);
         //Actualizamos 
         departamento.programadores.push(id_programador);
