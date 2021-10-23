@@ -68,6 +68,8 @@ type Mutation {
   addDepartamento(id: ID!, nombre: String!, presupuesto: Float!, id_jefe: String!): Departamento
   deleteDepartamento(id: ID!): Departamento
   updateDepartamento(id: ID!, nombre: String!, presupuesto: Float!, id_jefe: String!): Departamento
+  addProgramadorDepartamento(id: ID!, id_programador: String!): Departamento
+  removeProgramadorDepartamento(id: ID!, id_programador: String!): Departamento
   
   # Programadores
   addProgramador(nombre: String!, experiencia: Int!, salario: Float!, perfil: Perfil!, departamento_id: String!, fechaAlta: DateTime!, lenguajes: [Lenguaje!]! ): Programador
