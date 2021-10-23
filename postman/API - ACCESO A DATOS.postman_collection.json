@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "af6cf970-eb11-446d-b4f9-82f1d0b0a398",
+		"_postman_id": "06b380ea-dcd0-4927-81dd-aba2f26a37b1",
 		"name": "API - ACCESO A DATOS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -151,6 +151,84 @@
 									"graphql": {
 										"query": "mutation DeleteDepartamentoMutation($deleteDepartamentoId: ID!) {\n  deleteDepartamento(id: $deleteDepartamentoId) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n      id\n    }\n    programadores {\n      id\n      nombre\n      experiencia\n      salario\n      perfil\n    }\n  }\n}",
 										"variables": "{\n  \"deleteDepartamentoId\": \"111\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Departamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateDepartamentoMutation($updateDepartamentoId: ID!, $nombre: String!, $presupuesto: Float!, $idJefe: String!) {\n  updateDepartamento(id: $updateDepartamentoId, nombre: $nombre, presupuesto: $presupuesto, id_jefe: $idJefe) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n    }\n    programadores {\n      nombre\n      experiencia\n      salario\n      lenguajes\n    }\n  }\n}",
+										"variables": "{\n  \"updateDepartamentoId\": \"111\",\n  \"nombre\": \"Departamento Update\",\n  \"presupuesto\": 30000,\n  \"idJefe\": \"111\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Añadir Programador a Departamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation AddProgramadorDepartamentoMutation($addProgramadorDepartamentoId: ID!, $idProgramador: String!) {\n  addProgramadorDepartamento(id: $addProgramadorDepartamentoId, id_programador: $idProgramador) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n    }\n    programadores {\n      nombre\n      experiencia\n      salario\n      perfil\n      id\n      departamento\n    }\n  }\n}",
+										"variables": "{\n  \"addProgramadorDepartamentoId\": \"111\",\n  \"idProgramador\": \"888\"\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Eliminar Programador a Departamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation RemoveProgramadorDepartamentoMutation($removeProgramadorDepartamentoId: ID!, $idProgramador: String!) {\n  removeProgramadorDepartamento(id: $removeProgramadorDepartamentoId, id_programador: $idProgramador) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n    }\n    programadores {\n      id\n      nombre\n      experiencia\n      departamento\n    }\n  }\n}",
+										"variables": "{\n  \"removeProgramadorDepartamentoId\": \"111\",\n  \"idProgramador\": \"222\"\n}"
 									}
 								},
 								"url": {
@@ -353,6 +431,32 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "UPDATE Empleado",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateProgramadorMutation($updateProgramadorId: ID!, $nombre: String!, $experiencia: Int!, $salario: Float!, $perfil: Perfil!, $departamentoId: String!, $fechaAlta: DateTime!, $lenguajes: [Lenguaje!]!) {\n  updateProgramador(id: $updateProgramadorId, nombre: $nombre, experiencia: $experiencia, salario: $salario, perfil: $perfil, departamento_id: $departamentoId, fechaAlta: $fechaAlta, lenguajes: $lenguajes) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"updateProgramadorId\": \"888\",\n  \"nombre\": \"Programador Update\",\n  \"experiencia\": 3,\n  \"salario\": 3000,\n  \"perfil\": \"FullStack\",\n  \"departamentoId\": \"222\",\n  \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n  \"lenguajes\": [\"Java\", \"TypeScript\"]\n}"
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -525,6 +629,100 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "UPDATE Departamento",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Departamento Update\",\n    \"presupuesto\": \"20000\",\n    \"id_jefe\": \"111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Añadir Programador a Departamento",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id_programador\": \"888\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111/add_programador/888",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111",
+										"add_programador",
+										"888"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Eliminar Programador a Departamento",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id_programador\": \"888\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/rest/departamento/111/remove_programador/222",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"departamento",
+										"111",
+										"remove_programador",
+										"222"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -673,6 +871,36 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/rest/programador/111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"rest",
+										"programador",
+										"111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Programador",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Departamento Update\",\n    \"experiencia\": 2,\n    \"salario\": 200000,\n    \"perfil\": \"FullStack\",\n    \"departamento_id\": \"222\",\n    \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n    \"lenguajes\": [\"Java\", \"TypeScript\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://localhost:4000/rest/programador/111",
 									"protocol": "http",
