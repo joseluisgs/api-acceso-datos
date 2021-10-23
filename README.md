@@ -11,6 +11,10 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 
 - [API - Acceso a Datos](#api---acceso-a-datos)
   - [Acerca de](#acerca-de)
+    - [Documentación](#documentación)
+    - [Relaciones](#relaciones)
+      - [Departamento](#departamento)
+      - [Programador](#programador)
   - [Consumo de la API](#consumo-de-la-api)
     - [Cliente GraphQL - Apollo Client](#cliente-graphql---apollo-client)
     - [Cliente REST](#cliente-rest)
@@ -29,13 +33,39 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 
 
 ## Acerca de
-Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se dapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.
+Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se adapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.
+
+### Documentación
+La documentación de la API esta disponible en [este enlace](https://documenter.getpostman.com/view/11271351/UV5agGTC).
 
 ![imagen2](./images/comparable.png)
+
+### Relaciones
+- Un Departamento tiene una  lista de programadores (uno a muchos). Además tiene un programador que es Jefe de dicho Departamento (uno a uno)
+- Los Programadores pertenecen a un departamento (muchos a uno), tiene un perfil (FrontEnd, BackEnd o FullStack) y domina una lista de lenguajes: Java, TypeScript, NodeJS, VueJS).
+
+#### Departamento
+- id: ID! (uuidv4)
+- nombre: String! Nombre del Departamento
+- presupuesto: Float! Presupuesto anula asignado
+- jefe: Programador! Relación con Programador 1-1: id de Programador que dirige el Departamento
+- programadores: [Programador] Lista de id de Programadores que están asociados al Departamento
+
+#### Programador
+- id: ID! (uuidv4)
+- nombre: String! Nombre del programador
+- experiencia: Int! Años de experiencia
+- salario: Float! Salario anual recibido
+- perfil: Perfil! (FullStack, BackEnd, o FrontEnd)
+- departamento: String! Relación con Departamento, id deDepartamento.
+- fechaAlta: DateTime! Fecha de alta en nuestra empresa
+- lenguajes: Lista de lenguajes que domina: Java, TypeScript, NodeJS, VueJS
 
 
 ## Consumo de la API
 Puedes consumir esta API usando un cliente REST o GraphQL que desees.
+
+![imagen2](./images/responses.png)
 
 ### Cliente GraphQL - Apollo Client
 Puedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.

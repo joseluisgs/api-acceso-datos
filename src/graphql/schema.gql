@@ -96,15 +96,15 @@ type Query {
   """
   getProgramadorByID(id: ID!): Programador
   """
-  Obtiene los departamentos asociados a un programador dado el ID del departamento
+  Obtiene los programadores asociados a un departamento dado el ID del departamento
   """
   getProgramadoresByDepartamentoID(departamentoID: String!): [Programador] #Puede ser vacío
   """
-  Obtiene el perfil de un programador dado su ID
+  Obtiene la lista de programadores dado un perfil
   """
   getProgramadoresByPerfil(perfil: String!): [Programador]
   """
-  Obtiene la lista de lenguajes dominados de un programador dado su ID
+  Obtiene la lista de programadores que dominan un lenguaje dado
   """
   getProgramadoresByLenguaje(lenguaje: String!): [Programador]
   ## Podriamos buscar por jefe, por presupuesto, etc...

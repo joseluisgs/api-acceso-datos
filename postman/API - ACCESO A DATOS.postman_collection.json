@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "06b380ea-dcd0-4927-81dd-aba2f26a37b1",
 		"name": "API - ACCESO A DATOS",
+		"description": "## Acerca de:\nEsta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se adapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.\n\n![imagen](https://cdn.sanity.io/images/ay6gmb6r/production/040066ba6fde77015018ce05547a8b269e13b535-2240x1260.png)\n\n## Repositorio\nLa API la tienes disponible en: https://github.com/joseluisgs/api-acceso-datos\n\n## El problema\n\n### Relaciones\n- Un Departamento tiene una  lista de programadores (uno a muchos). Además tiene un programador que es Jefe de dicho Departamento (uno a uno)\n- Los Programadores pertenecen a un departamento (muchos a uno), tiene un perfil (FrontEnd, BackEnd o FullStack) y domina una lista de lenguajes: Java, TypeScript, NodeJS, VueJS).\n\n#### Departamento\n- id: ID! (uuidv4)\n- nombre: String! Nombre del Departamento\n- presupuesto: Float! Presupuesto anula asignado\n- jefe: Programador! Relación con Programador 1-1: id de Programador que dirige el Departamento\n- programadores: [Programador] Lista de id de Programadores que están asociados al Departamento\n\n#### Programador\n- id: ID! (uuidv4)\n- nombre: String! Nombre del programador\n- experiencia: Int! Años de experiencia\n- salario: Float! Salario anual recibido\n- perfil: Perfil! (FullStack, BackEnd, o FrontEnd)\n- departamento: String! Relación con Departamento, id deDepartamento.\n- fechaAlta: DateTime! Fecha de alta en nuestra empresa\n- lenguajes: Lista de lenguajes que domina: Java, TypeScript, NodeJS, VueJS\n\n\n## Consumo de la API\nPuedes consumir esta API usando un cliente REST o GraphQL que desees.\n\n![imagen2](https://cdn.cosmicjs.com/7d9a6f90-7080-11eb-87a2-9be5e90cdf74-GraphQLvsRest.png)\n\n### Cliente GraphQL - Apollo Client\nPuedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.\n\n### Cliente REST\nPuedes usar tu cliente rest favorito para hacer tus consultas desde el endpoint de la API: http://url:port/rest, por ejemplo: http://localhost:4000/rest. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -33,7 +34,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene todos los Departamentos"
 							},
 							"response": []
 						},
@@ -59,7 +61,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene Departamento por su ID"
 							},
 							"response": []
 						},
@@ -85,7 +88,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene los programadores asociados a un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -111,7 +115,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene el jefe asignado a un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -137,7 +142,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Crea un nuevo departamento con sus datos básicos, pero no los programadores"
 							},
 							"response": []
 						},
@@ -163,7 +169,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Elimina un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -189,7 +196,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Actualiza los datos de un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -215,7 +223,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Añade un programador a un departamento dado el ID del departamento y el ID del Programador"
 							},
 							"response": []
 						},
@@ -241,11 +250,13 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Elimina un programador asociado a un departamento dado en ID del Departamento y el ID del Programador"
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "Colecciones de consultas sobre Departamentos"
 				},
 				{
 					"name": "Programadores",
@@ -272,7 +283,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene todos los Programadores"
 							},
 							"response": []
 						},
@@ -298,7 +310,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene un programador dado su ID"
 							},
 							"response": []
 						},
@@ -324,7 +337,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene los programadores asociados a un departamento dado el ID del departamento"
 							},
 							"response": []
 						},
@@ -350,7 +364,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene la lista de programadores dado un perfil"
 							},
 							"response": []
 						},
@@ -376,7 +391,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Obtiene la lista de programadores que dominan un lenguaje dado"
 							},
 							"response": []
 						},
@@ -402,7 +418,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Crea un nuevo programador con sus datos básicos"
 							},
 							"response": []
 						},
@@ -428,7 +445,8 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Elimina un programador dado su ID"
 							},
 							"response": []
 						},
@@ -454,11 +472,13 @@
 									"path": [
 										"graphql"
 									]
-								}
+								},
+								"description": "Actualiza los datos de un programador dado su ID"
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "Colecciones de consulta sobre Programadores"
 				},
 				{
 					"name": "hello",
@@ -482,11 +502,13 @@
 							"path": [
 								"graphql"
 							]
-						}
+						},
+						"description": "Función de saludo de la API GraphQL"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "## Acerca De\nAPI GraphQL con las siguientes características. \n- Un Departamento tiene una  lista de programadores (uno a muchos). Además tiene un programador que es Jefe de dicho Departamento (uno a uno)\n- Los Programadores pertenecen a un departamento (muchos a uno), tiene un perfil (FrontEnd, BackEnd o FullStack) y domina una lista de lenguajes: Java, TypeScript, NodeJS, VueJS).\n\n## Departamento\n- id: ID! (uuidv4)\n- nombre: String! Nombre del Departamento\n- presupuesto: Float! Presupuesto anula asignado\n- jefe: Programador! Relación con Programador 1-1: id de Programador que dirige el Departamento\n- programadores: [Programador] Lista de id de Programadores que están asociados al Departamento\n\n## Programador\n- id: ID! (uuidv4)\n- nombre: String! Nombre del programador\n- experiencia: Int! Años de experiencia\n- salario: Float! Salario anual recibido\n- perfil: Perfil! (FullStack, BackEnd, o FrontEnd)\n- departamento: String! Relación con Departamento, id deDepartamento.\n- fechaAlta: DateTime! Fecha de alta en nuestra empresa\n- lenguajes: Lista de lenguajes que domina: Java, TypeScript, NodeJS, VueJS"
 		},
 		{
 			"name": "REST",
@@ -510,7 +532,8 @@
 										"rest",
 										"departamento"
 									]
-								}
+								},
+								"description": "Obtiene todos los Departamentos"
 							},
 							"response": []
 						},
@@ -531,7 +554,8 @@
 										"departamento",
 										"111"
 									]
-								}
+								},
+								"description": "Obtiene un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -553,7 +577,8 @@
 										"111",
 										"programadores"
 									]
-								}
+								},
+								"description": "Obtiene los programadores asociados a un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -575,7 +600,8 @@
 										"111",
 										"jefe"
 									]
-								}
+								},
+								"description": "Obtiene el jefe asignado a un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -605,7 +631,8 @@
 										"departamento",
 										""
 									]
-								}
+								},
+								"description": "Crea un nuevo departamento con sus datos básicos, pero no los programadores"
 							},
 							"response": []
 						},
@@ -626,7 +653,8 @@
 										"departamento",
 										"111"
 									]
-								}
+								},
+								"description": "Elimina un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -656,7 +684,8 @@
 										"departamento",
 										"111"
 									]
-								}
+								},
+								"description": "Actualiza los datos de un departamento dado su ID"
 							},
 							"response": []
 						},
@@ -688,7 +717,8 @@
 										"add_programador",
 										"888"
 									]
-								}
+								},
+								"description": "Añade un programador a un departamento dado el ID del departamento y el ID del Programador"
 							},
 							"response": []
 						},
@@ -720,11 +750,13 @@
 										"remove_programador",
 										"222"
 									]
-								}
+								},
+								"description": "Elimina un programador asociado a un departamento dado en ID del Departamento y el ID del Programador"
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "Consultas sobre Departamentos"
 				},
 				{
 					"name": "Programadores",
@@ -745,7 +777,8 @@
 										"rest",
 										"programador"
 									]
-								}
+								},
+								"description": "Obtiene todos los Programadores"
 							},
 							"response": []
 						},
@@ -766,7 +799,8 @@
 										"programador",
 										"111"
 									]
-								}
+								},
+								"description": "Obtiene un programador dado su ID"
 							},
 							"response": []
 						},
@@ -788,7 +822,8 @@
 										"departamento",
 										"111"
 									]
-								}
+								},
+								"description": "Obtiene los programadores asociados a un departamento dado el ID del departamento"
 							},
 							"response": []
 						},
@@ -810,7 +845,8 @@
 										"perfil",
 										"FullStack"
 									]
-								}
+								},
+								"description": "Obtiene la lista de programadores dado un perfil"
 							},
 							"response": []
 						},
@@ -832,7 +868,8 @@
 										"lenguaje",
 										"VueJS"
 									]
-								}
+								},
+								"description": "Obtiene la lista de programadores que dominan un lenguaje dado"
 							},
 							"response": []
 						},
@@ -862,7 +899,8 @@
 										"programador",
 										""
 									]
-								}
+								},
+								"description": "Crea un nuevo programador con sus datos básicos"
 							},
 							"response": []
 						},
@@ -883,7 +921,8 @@
 										"programador",
 										"111"
 									]
-								}
+								},
+								"description": "Elimina un programador dado su ID"
 							},
 							"response": []
 						},
@@ -913,11 +952,13 @@
 										"programador",
 										"111"
 									]
-								}
+								},
+								"description": "Actualiza los datos de un programador dado su ID"
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "Consulta sobre Programadores"
 				},
 				{
 					"name": "hello",
@@ -934,11 +975,13 @@
 							"path": [
 								"rest"
 							]
-						}
+						},
+						"description": "Función de saludo de la API REST"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "## Acerca De\nAPI REST con las siguientes características. \n- Un Departamento tiene una  lista de programadores (uno a muchos). Además tiene un programador que es Jefe de dicho Departamento (uno a uno)\n- Los Programadores pertenecen a un departamento (muchos a uno), tiene un perfil (FrontEnd, BackEnd o FullStack) y domina una lista de lenguajes: Java, TypeScript, NodeJS, VueJS).\n\n## Departamento\n- id: ID! (uuidv4)\n- nombre: String! Nombre del Departamento\n- presupuesto: Float! Presupuesto anula asignado\n- jefe: Programador! Relación con Programador 1-1: id de Programador que dirige el Departamento\n- programadores: [Programador] Lista de id de Programadores que están asociados al Departamento\n\n## Programador\n- id: ID! (uuidv4)\n- nombre: String! Nombre del programador\n- experiencia: Int! Años de experiencia\n- salario: Float! Salario anual recibido\n- perfil: Perfil! (FullStack, BackEnd, o FrontEnd)\n- departamento: String! Relación con Departamento, id deDepartamento.\n- fechaAlta: DateTime! Fecha de alta en nuestra empresa\n- lenguajes: Lista de lenguajes que domina: Java, TypeScript, NodeJS, VueJS"
 		}
 	]
 }
