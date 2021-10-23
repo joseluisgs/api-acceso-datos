@@ -11,25 +11,40 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 
 - [API - Acceso a Datos](#api---acceso-a-datos)
   - [Acerca de](#acerca-de)
-    - [Uso](#uso)
+  - [Consumo de la API](#consumo-de-la-api)
+    - [Cliente GraphQL - Apollo Client](#cliente-graphql---apollo-client)
+    - [Cliente REST](#cliente-rest)
+  - [Despliegue](#despliegue)
+    - [Con NodeJS](#con-nodejs)
       - [Instalación](#instalación)
       - [Ejecución](#ejecución)
       - [Ejecución Modo Dev](#ejecución-modo-dev)
       - [Ejecución con Nodemon](#ejecución-con-nodemon)
       - [Linter](#linter)
-  - [Extensiones de interés](#extensiones-de-interés)
   - [Postman](#postman)
+  - [Extensiones de interés](#extensiones-de-interés)
   - [Autor](#autor)
     - [Contacto](#contacto)
   - [Licencia](#licencia)
 
 
 ## Acerca de
-Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes.
+Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se dapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.
 
 ![imagen2](./images/comparable.png)
 
-### Uso
+
+## Consumo de la API
+Puedes consumir esta API usando un cliente REST o GraphQL que desees.
+
+### Cliente GraphQL - Apollo Client
+Puedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.
+
+### Cliente REST
+Puedes usar tu cliente rest favorito para hacer tus consultas desde el endpoint de la API: http://url:port/rest, por ejemplo: http://localhost:4000/rest. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.
+
+## Despliegue
+### Con NodeJS
 #### Instalación
 ```bash
 npm install
@@ -56,13 +71,15 @@ npm run lint
 o
 npm run lint:fix
 ```
+## Postman
+Se incluye el fichero para usar y ver las consultas con [Postman](https://www.postman.com/). Con este cliente podrás hacer tus peticiones REST y GraphQL.
+
 
 ## Extensiones de interés
 - GraphQL: Para visualizar y lanzar tus consultas GraphQL.
 - ThunderClient: Para visualizar y lanzar tus consultas REST.
 
-## Postman
-Se incluye el fichero para usar y ver las consultas con Postman.
+
 
 ## Autor
 
