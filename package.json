@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Ejemplo de API REST y GraphQL para consultar y consumir en Acceso a Datos",
   "main": "src/index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "tsc --watch",
     "dev:watch": "nodemon",
