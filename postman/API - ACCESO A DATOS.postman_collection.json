@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "06b380ea-dcd0-4927-81dd-aba2f26a37b1",
 		"name": "API - ACCESO A DATOS",
-		"description": "## Acerca de:\nEsta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se adapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.\n\n![imagen](https://cdn.sanity.io/images/ay6gmb6r/production/040066ba6fde77015018ce05547a8b269e13b535-2240x1260.png)\n\n## Repositorio\nLa API la tienes disponible en: https://github.com/joseluisgs/api-acceso-datos\n\n## El problema\n\n### Relaciones\n- Un Departamento tiene una  lista de programadores (uno a muchos). Además tiene un programador que es Jefe de dicho Departamento (uno a uno)\n- Los Programadores pertenecen a un departamento (muchos a uno), tiene un perfil (FrontEnd, BackEnd o FullStack) y domina una lista de lenguajes: Java, TypeScript, NodeJS, VueJS).\n\n#### Departamento\n- id: ID! (uuidv4)\n- nombre: String! Nombre del Departamento\n- presupuesto: Float! Presupuesto anula asignado\n- jefe: Programador! Relación con Programador 1-1: id de Programador que dirige el Departamento\n- programadores: [Programador] Lista de id de Programadores que están asociados al Departamento\n\n#### Programador\n- id: ID! (uuidv4)\n- nombre: String! Nombre del programador\n- experiencia: Int! Años de experiencia\n- salario: Float! Salario anual recibido\n- perfil: Perfil! (FullStack, BackEnd, o FrontEnd)\n- departamento: String! Relación con Departamento, id deDepartamento.\n- fechaAlta: DateTime! Fecha de alta en nuestra empresa\n- lenguajes: Lista de lenguajes que domina: Java, TypeScript, NodeJS, VueJS\n\n\n## Consumo de la API\nPuedes consumir esta API usando un cliente REST o GraphQL que desees.\n\n![imagen2](https://cdn.cosmicjs.com/7d9a6f90-7080-11eb-87a2-9be5e90cdf74-GraphQLvsRest.png)\n\n### Cliente GraphQL - Apollo Client\nPuedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.\n\n### Cliente REST\nPuedes usar tu cliente rest favorito para hacer tus consultas desde el endpoint de la API: http://url:port/rest, por ejemplo: http://localhost:4000/rest. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.",
+		"description": "[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178c6)](https://www.typescriptlang.org/)\n[![Docker](https://img.shields.io/badge/Docker-passing-blue)](https://hub.docker.com/r/joseluisgs/api-acceso-datos)\n[![Heroku](https://img.shields.io/badge/Heroku-passing-blueviolet)](https://api-acceso-datos.herokuapp.com/)\n[![Code Style](https://img.shields.io/badge/Lint%20Style-AirBnB-ff69b4)](https://airbnb.io/javascript)\n[![Licence](https://img.shields.io/github/license/joseluisgs/photo-gallery-ionic)](./LICENSE)\n![GitHub](https://img.shields.io/github/last-commit/joseluisgs/api-acceso-datos)\n\n## Acerca de:\nEsta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se adapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.\n\n![imagen](https://cdn.sanity.io/images/ay6gmb6r/production/040066ba6fde77015018ce05547a8b269e13b535-2240x1260.png)\n\n## Despliegue\n### Repositorio\nLa API la tienes disponible en: https://github.com/joseluisgs/api-acceso-datos\n### Docker\nDisponible en: https://hub.docker.com/r/joseluisgs/api-acceso-datos\n### Heroku\nDismponible en: https://api-acceso-datos.herokuapp.com/\n\n## El problema\n\n### Relaciones\n- Un Departamento tiene una  lista de programadores (uno a muchos). Además tiene un programador que es Jefe de dicho Departamento (uno a uno)\n- Los Programadores pertenecen a un departamento (muchos a uno), tiene un perfil (FrontEnd, BackEnd o FullStack) y domina una lista de lenguajes: Java, TypeScript, NodeJS, VueJS).\n\n#### Departamento\n- id: ID! (uuidv4)\n- nombre: String! Nombre del Departamento\n- presupuesto: Float! Presupuesto anula asignado\n- jefe: Programador! Relación con Programador 1-1: id de Programador que dirige el Departamento\n- programadores: [Programador] Lista de id de Programadores que están asociados al Departamento\n\n#### Programador\n- id: ID! (uuidv4)\n- nombre: String! Nombre del programador\n- experiencia: Int! Años de experiencia\n- salario: Float! Salario anual recibido\n- perfil: Perfil! (FullStack, BackEnd, o FrontEnd)\n- departamento: String! Relación con Departamento, id deDepartamento.\n- fechaAlta: DateTime! Fecha de alta en nuestra empresa\n- lenguajes: Lista de lenguajes que domina: Java, TypeScript, NodeJS, VueJS\n\n\n## Consumo de la API\nPuedes consumir esta API usando un cliente REST o GraphQL que desees.\n\n![imagen2](https://cdn.cosmicjs.com/7d9a6f90-7080-11eb-87a2-9be5e90cdf74-GraphQLvsRest.png)\n\n### Cliente GraphQL - Apollo Client\nPuedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql o desde Heroku https://api-acceso-datos.herokuapp.com/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.\n\n### Cliente REST\nPuedes usar tu cliente rest favorito para hacer tus consultas desde el endpoint de la API: http://url:port/rest, por ejemplo: http://localhost:4000/rest o desde Heroku: https://api-acceso-datos.herokuapp.com/rest. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -25,12 +25,11 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -48,16 +47,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($getDepartamentoByIdId: ID!) {\n  getDepartamentoByID(id: $getDepartamentoByIdId) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      salario\n    }\n    programadores {\n      nombre\n      perfil\n      lenguajes\n      fechaAlta\n    }\n  }\n}",
-										"variables": "{\n  \"getDepartamentoByIdId\": 111\n}"
+										"variables": "{\n  \"getDepartamentoByIdId\": {{idGetDepartamento}}\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -75,16 +73,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($getProgramadoresByIdId: ID!) {\n  getProgramadoresByID(id: $getProgramadoresByIdId) {\n    nombre\n    experiencia\n    salario\n    perfil\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"getProgramadoresByIdId\": 111\n}"
+										"variables": "{\n  \"getProgramadoresByIdId\": {{idGetDepartamento}}\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -102,16 +99,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($getJefeByIdId: ID!) {\n  getJefeByID(id: $getJefeByIdId) {\n    nombre\n    experiencia\n    salario\n    perfil\n    fechaAlta\n    lenguajes\n    departamento\n  }\n}",
-										"variables": "{\n  \"getJefeByIdId\": 111\n}"
+										"variables": "{\n  \"getJefeByIdId\": {{idGetDepartamento}}\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -133,12 +129,11 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -156,16 +151,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "mutation DeleteDepartamentoMutation($deleteDepartamentoId: ID!) {\n  deleteDepartamento(id: $deleteDepartamentoId) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n      id\n    }\n    programadores {\n      id\n      nombre\n      experiencia\n      salario\n      perfil\n    }\n  }\n}",
-										"variables": "{\n  \"deleteDepartamentoId\": \"111\"\n}"
+										"variables": "{\n  \"deleteDepartamentoId\": \"{{idRemoveDepartamento}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -183,16 +177,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "mutation UpdateDepartamentoMutation($updateDepartamentoId: ID!, $nombre: String!, $presupuesto: Float!, $idJefe: String!) {\n  updateDepartamento(id: $updateDepartamentoId, nombre: $nombre, presupuesto: $presupuesto, id_jefe: $idJefe) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n    }\n    programadores {\n      nombre\n      experiencia\n      salario\n      lenguajes\n    }\n  }\n}",
-										"variables": "{\n  \"updateDepartamentoId\": \"111\",\n  \"nombre\": \"Departamento Update\",\n  \"presupuesto\": 30000,\n  \"idJefe\": \"111\"\n}"
+										"variables": "{\n  \"updateDepartamentoId\": {{idGetDepartamento}},\n  \"nombre\": \"Departamento Update\",\n  \"presupuesto\": 30000,\n  \"idJefe\": \"{{idJefe}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -210,16 +203,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "mutation AddProgramadorDepartamentoMutation($addProgramadorDepartamentoId: ID!, $idProgramador: String!) {\n  addProgramadorDepartamento(id: $addProgramadorDepartamentoId, id_programador: $idProgramador) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n    }\n    programadores {\n      nombre\n      experiencia\n      salario\n      perfil\n      id\n      departamento\n    }\n  }\n}",
-										"variables": "{\n  \"addProgramadorDepartamentoId\": \"111\",\n  \"idProgramador\": \"888\"\n}"
+										"variables": "{\n  \"addProgramadorDepartamentoId\": {{idGetDepartamento}},\n  \"idProgramador\": \"{{idGetProgramador}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -237,16 +229,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "mutation RemoveProgramadorDepartamentoMutation($removeProgramadorDepartamentoId: ID!, $idProgramador: String!) {\n  removeProgramadorDepartamento(id: $removeProgramadorDepartamentoId, id_programador: $idProgramador) {\n    id\n    nombre\n    presupuesto\n    jefe {\n      nombre\n      experiencia\n      salario\n    }\n    programadores {\n      id\n      nombre\n      experiencia\n      departamento\n    }\n  }\n}",
-										"variables": "{\n  \"removeProgramadorDepartamentoId\": \"111\",\n  \"idProgramador\": \"222\"\n}"
+										"variables": "{\n  \"removeProgramadorDepartamentoId\": {{idGetDepartamento}},\n  \"idProgramador\": \"{{idGetProgramador}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -274,12 +265,11 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -297,16 +287,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($getProgramadorByIdId: ID!) {\n  getProgramadorByID(id: $getProgramadorByIdId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"getProgramadorByIdId\": 111\n}"
+										"variables": "{\n  \"getProgramadorByIdId\": {{idGetProgramador}}\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -324,16 +313,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($departamentoId: String!) {\n  getProgramadoresByDepartamentoID(departamentoID: $departamentoId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"departamentoId\": \"222\"\n}"
+										"variables": "{\n  \"departamentoId\": \"{{idGetDepartamento}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -351,16 +339,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($perfil: String!) {\n  getProgramadoresByPerfil(perfil: $perfil) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"perfil\": \"FullStack\"\n}"
+										"variables": "{\n  \"perfil\": \"{{perfil}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -378,16 +365,15 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "query Query($lenguaje: String!) {\n  getProgramadoresByLenguaje(lenguaje: $lenguaje) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"lenguaje\": \"VueJS\"\n}"
+										"variables": "{\n  \"lenguaje\": \"{{lenguaje}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
@@ -397,7 +383,7 @@
 							"response": []
 						},
 						{
-							"name": "POST Empleado",
+							"name": "POST Programador",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -405,21 +391,46 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "mutation AddProgramadorMutation($nombre: String!, $experiencia: Int!, $salario: Float!, $perfil: Perfil!, $departamentoId: String!, $fechaAlta: DateTime!, $lenguajes: [Lenguaje!]!) {\n  addProgramador(nombre: $nombre, experiencia: $experiencia, salario: $salario, perfil: $perfil, departamento_id: $departamentoId, fechaAlta: $fechaAlta, lenguajes: $lenguajes) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"nombre\": \"Programador Prueba\",\n  \"experiencia\": 2,\n  \"salario\": 30000,\n  \"perfil\": \"FullStack\",\n  \"departamentoId\": \"333\",\n  \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n  \"lenguajes\": [\"Java\", \"TypeScript\"]\n}"
+										"variables": "{\n  \"nombre\": \"Programador Prueba\",\n  \"experiencia\": 2,\n  \"salario\": 30000,\n  \"perfil\": \"FullStack\",\n  \"departamentoId\": \"{{idGetDepartamento}}\",\n  \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n  \"lenguajes\": [\"Java\", \"TypeScript\"]\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
 								},
 								"description": "Crea un nuevo programador con sus datos básicos"
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE Programador",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation UpdateProgramadorMutation($updateProgramadorId: ID!, $nombre: String!, $experiencia: Int!, $salario: Float!, $perfil: Perfil!, $departamentoId: String!, $fechaAlta: DateTime!, $lenguajes: [Lenguaje!]!) {\n  updateProgramador(id: $updateProgramadorId, nombre: $nombre, experiencia: $experiencia, salario: $salario, perfil: $perfil, departamento_id: $departamentoId, fechaAlta: $fechaAlta, lenguajes: $lenguajes) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
+										"variables": "{\n  \"updateProgramadorId\": \"{{idGetProgramador}}\",\n  \"nombre\": \"Programador Update\",\n  \"experiencia\": 3,\n  \"salario\": 3000,\n  \"perfil\": \"{{perfil}}\",\n  \"departamentoId\": \"{{idGetDepartamento}}\",\n  \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n  \"lenguajes\": [\"Java\", \"TypeScript\"]\n}"
+									}
+								},
+								"url": {
+									"raw": "http://{{Host}}/graphql",
+									"protocol": "http",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"graphql"
+									]
+								},
+								"description": "Actualiza los datos de un programador dado su ID"
 							},
 							"response": []
 						},
@@ -432,48 +443,20 @@
 									"mode": "graphql",
 									"graphql": {
 										"query": "mutation DeleteProgramadorMutation($deleteProgramadorId: ID!) {\n  deleteProgramador(id: $deleteProgramadorId) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"deleteProgramadorId\": \"222\"\n}"
+										"variables": "{\n  \"deleteProgramadorId\": \"{{idRemoveProgramador}}\"\n}"
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/graphql",
+									"raw": "http://{{Host}}/graphql",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"graphql"
 									]
 								},
 								"description": "Elimina un programador dado su ID"
-							},
-							"response": []
-						},
-						{
-							"name": "UPDATE Empleado",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "graphql",
-									"graphql": {
-										"query": "mutation UpdateProgramadorMutation($updateProgramadorId: ID!, $nombre: String!, $experiencia: Int!, $salario: Float!, $perfil: Perfil!, $departamentoId: String!, $fechaAlta: DateTime!, $lenguajes: [Lenguaje!]!) {\n  updateProgramador(id: $updateProgramadorId, nombre: $nombre, experiencia: $experiencia, salario: $salario, perfil: $perfil, departamento_id: $departamentoId, fechaAlta: $fechaAlta, lenguajes: $lenguajes) {\n    id\n    nombre\n    experiencia\n    salario\n    perfil\n    departamento\n    fechaAlta\n    lenguajes\n  }\n}",
-										"variables": "{\n  \"updateProgramadorId\": \"888\",\n  \"nombre\": \"Programador Update\",\n  \"experiencia\": 3,\n  \"salario\": 3000,\n  \"perfil\": \"FullStack\",\n  \"departamentoId\": \"222\",\n  \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n  \"lenguajes\": [\"Java\", \"TypeScript\"]\n}"
-									}
-								},
-								"url": {
-									"raw": "http://localhost:4000/graphql",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "4000",
-									"path": [
-										"graphql"
-									]
-								},
-								"description": "Actualiza los datos de un programador dado su ID"
 							},
 							"response": []
 						}
@@ -493,12 +476,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/graphql",
+							"raw": "http://{{Host}}/graphql",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{Host}}"
 							],
-							"port": "4000",
 							"path": [
 								"graphql"
 							]
@@ -522,12 +504,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento",
+									"raw": "http://{{Host}}/rest/departamento",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento"
@@ -543,16 +524,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111",
+									"raw": "http://{{Host}}/rest/departamento/{{idGetDepartamento}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
-										"111"
+										"{{idGetDepartamento}}"
 									]
 								},
 								"description": "Obtiene un departamento dado su ID"
@@ -565,16 +545,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111/programadores",
+									"raw": "http://{{Host}}/rest/departamento/{{idGetDepartamento}}/programadores",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
-										"111",
+										"{{idGetDepartamento}}",
 										"programadores"
 									]
 								},
@@ -588,16 +567,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111/jefe",
+									"raw": "http://{{Host}}/rest/departamento/{{idGetDepartamento}}/jefe",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
-										"111",
+										"{{idGetDepartamento}}",
 										"jefe"
 									]
 								},
@@ -612,7 +590,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nombre\": \"Departamento Insert\",\n    \"presupuesto\": \"20000\",\n    \"id_jefe\": \"111\"\n}",
+									"raw": "{\n    \"nombre\": \"Departamento Insert\",\n    \"presupuesto\": \"20000\",\n    \"id_jefe\": \"{{idJefe}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -620,12 +598,11 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/",
+									"raw": "http://{{Host}}/rest/departamento/",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
@@ -637,35 +614,13 @@
 							"response": []
 						},
 						{
-							"name": "DELETE Departamento",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "4000",
-									"path": [
-										"rest",
-										"departamento",
-										"111"
-									]
-								},
-								"description": "Elimina un departamento dado su ID"
-							},
-							"response": []
-						},
-						{
 							"name": "UPDATE Departamento",
 							"request": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nombre\": \"Departamento Update\",\n    \"presupuesto\": \"20000\",\n    \"id_jefe\": \"111\"\n}",
+									"raw": "{\n    \"nombre\": \"Departamento Update\",\n    \"presupuesto\": \"20000\",\n    \"id_jefe\": \"{{idJefe}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -673,16 +628,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111",
+									"raw": "http://{{Host}}/rest/departamento/{{idGetDepartamento}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
-										"111"
+										"{{idGetDepartamento}}"
 									]
 								},
 								"description": "Actualiza los datos de un departamento dado su ID"
@@ -704,18 +658,17 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111/add_programador/888",
+									"raw": "http://{{Host}}/rest/departamento/{{idGetDepartamento}}/add_programador/{{idGetProgramador}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
-										"111",
+										"{{idGetDepartamento}}",
 										"add_programador",
-										"888"
+										"{{idGetProgramador}}"
 									]
 								},
 								"description": "Añade un programador a un departamento dado el ID del departamento y el ID del Programador"
@@ -737,21 +690,41 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/rest/departamento/111/remove_programador/222",
+									"raw": "http://{{Host}}/rest/departamento/{{idGetDepartamento}}/remove_programador/{{idGetProgramador}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"departamento",
-										"111",
+										"{{idGetDepartamento}}",
 										"remove_programador",
-										"222"
+										"{{idGetProgramador}}"
 									]
 								},
 								"description": "Elimina un programador asociado a un departamento dado en ID del Departamento y el ID del Programador"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Departamento",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://{{Host}}/rest/departamento/{{idRemoveDepartamento}}",
+									"protocol": "http",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"rest",
+										"departamento",
+										"{{idRemoveDepartamento}}"
+									]
+								},
+								"description": "Elimina un departamento dado su ID"
 							},
 							"response": []
 						}
@@ -767,12 +740,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/programador",
+									"raw": "http://{{Host}}/rest/programador",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador"
@@ -788,16 +760,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/programador/111",
+									"raw": "http://{{Host}}/rest/programador/{{idGetProgramador}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador",
-										"111"
+										"{{idGetProgramador}}"
 									]
 								},
 								"description": "Obtiene un programador dado su ID"
@@ -810,17 +781,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/programador/departamento/111",
+									"raw": "http://{{Host}}/rest/programador/departamento/{{idGetProgramador}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador",
 										"departamento",
-										"111"
+										"{{idGetProgramador}}"
 									]
 								},
 								"description": "Obtiene los programadores asociados a un departamento dado el ID del departamento"
@@ -833,17 +803,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/programador/perfil/FullStack",
+									"raw": "http://{{Host}}/rest/programador/perfil/{{perfil}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador",
 										"perfil",
-										"FullStack"
+										"{{perfil}}"
 									]
 								},
 								"description": "Obtiene la lista de programadores dado un perfil"
@@ -856,17 +825,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:4000/rest/programador/lenguaje/VueJS",
+									"raw": "http://{{Host}}/rest/programador/lenguaje/{{lenguaje}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador",
 										"lenguaje",
-										"VueJS"
+										"{{lenguaje}}"
 									]
 								},
 								"description": "Obtiene la lista de programadores que dominan un lenguaje dado"
@@ -880,7 +848,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nombre\": \"Departamento Insert\",\n    \"experiencia\": 2,\n    \"salario\": 200000,\n    \"perfil\": \"FullStack\",\n    \"departamento_id\": \"222\",\n    \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n    \"lenguajes\": [\"Java\", \"TypeScript\"]\n}",
+									"raw": "{\n    \"nombre\": \"Departamento Insert\",\n    \"experiencia\": 2,\n    \"salario\": 200000,\n    \"perfil\": \"{{perfil}}\",\n    \"departamento_id\": \"{{idGetDepartamento}}\",\n    \"fechaAlta\": \"2021-10-23T18:25:43.511Z\",\n    \"lenguajes\": [\"Java\", \"TypeScript\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -888,12 +856,11 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/rest/programador/",
+									"raw": "http://{{Host}}/rest/programador/",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador",
@@ -901,28 +868,6 @@
 									]
 								},
 								"description": "Crea un nuevo programador con sus datos básicos"
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE Programador",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:4000/rest/programador/111",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "4000",
-									"path": [
-										"rest",
-										"programador",
-										"111"
-									]
-								},
-								"description": "Elimina un programador dado su ID"
 							},
 							"response": []
 						},
@@ -941,19 +886,39 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4000/rest/programador/111",
+									"raw": "http://{{Host}}/rest/programador/{{idGetProgramador}}",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"{{Host}}"
 									],
-									"port": "4000",
 									"path": [
 										"rest",
 										"programador",
-										"111"
+										"{{idGetProgramador}}"
 									]
 								},
 								"description": "Actualiza los datos de un programador dado su ID"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Programador",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://{{Host}}/rest/programador/{{idRemoveProgramador}}",
+									"protocol": "http",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"rest",
+										"programador",
+										"{{idRemoveProgramador}}"
+									]
+								},
+								"description": "Elimina un programador dado su ID"
 							},
 							"response": []
 						}
@@ -966,12 +931,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/rest",
+							"raw": "http://{{Host}}/rest",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{Host}}"
 							],
-							"port": "4000",
 							"path": [
 								"rest"
 							]
