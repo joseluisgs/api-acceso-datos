@@ -1,0 +1,51 @@
+# Ejemplo 1 algo más complejo
+scalar DateTime
+
+# Tipos para a
+type Query {
+  hello: String
+}
+
+type Programador {
+  id: ID!
+  nombre: String!
+  experiencia: Int!
+  departamento: Departamento!
+  salario: Float!
+  perfil: Perfil!
+  fechaAlta: DateTime!
+  lenguajes: [Lenguaje!]! 
+  proyectos: [Proyecto!]!
+}
+
+type Departamento {
+  id: ID!
+  nombre: String!
+  presupuesto: Float!
+  programadores: [Programador!]! 
+  jefe: Programador! 
+  proyectos: [Proyecto!]!
+}
+
+type Proyecto {
+  id: ID!
+  nombre: String!
+  presupuesto: Float!
+  responsable: Programador!
+  programadores: [Programador!]! 
+  departamento: Departamento! 
+  fechaInicio: DateTime!
+  fechaFin: DateTime!
+}
+
+type Lenguaje {
+  id: ID!
+  nombre: String!
+  programadores: [Programador!]! 
+}
+
+enum Perfil {
+  Analista
+  Desarrollador
+  Testeador
+}

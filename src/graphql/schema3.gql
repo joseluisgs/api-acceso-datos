@@ -1,0 +1,35 @@
+# Ejemplo de aviones y aeropueros
+
+scalar DateTime
+
+# Tipos para a
+type Query {
+  hello: String
+}
+
+type Aeropuerto {
+  id: ID!
+  localizacion: String!
+  rutas: [Ruta!]!
+  aviones: [Avion!]!
+}
+
+type Ruta {
+  id: ID!
+  fechaHoraSalida: DateTime!
+  kilometros: Int!
+}
+
+type Avion {
+  id: ID!
+  matricula: String!
+  velocidadHora: Int!
+  pasajeros: [Pasajero!]!
+}
+
+type Pasajero {
+  id: ID!
+  nombre: String!
+  apellido: String!
+}
+
