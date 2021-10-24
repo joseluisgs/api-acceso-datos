@@ -20,10 +20,16 @@ export default (app: express.Express, restPath: string) => {
       }));
   });
 
+
   // Departamentos 
   app.use(restPath + '/departamento', departamento);
 
   // Departamentos 
   app.use(restPath + '/programador', programador);
+
+  // Documentación
+  app.get('/doc', (req, res) => {
+    res.status(301).redirect('https://documenter.getpostman.com/view/11271351/UV5agGTC');
+  });
 
 };

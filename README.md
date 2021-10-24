@@ -19,6 +19,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
     - [Cliente GraphQL - Apollo Client](#cliente-graphql---apollo-client)
     - [Cliente REST](#cliente-rest)
   - [Despliegue](#despliegue)
+    - [Docker](#docker)
     - [Con NodeJS](#con-nodejs)
       - [Instalación](#instalación)
       - [Ejecución](#ejecución)
@@ -36,7 +37,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se adapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.
 
 ### Documentación
-La documentación de la API esta disponible en [este enlace](https://documenter.getpostman.com/view/11271351/UV5agGTC).
+La documentación de la API esta disponible en [este enlace](https://documenter.getpostman.com/view/11271351/UV5agGTC) o desde http://url:port/doc, por ejemplo: http://localhost:4000/doc
 
 ![imagen2](./images/comparable.png)
 
@@ -74,6 +75,12 @@ Puedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint 
 Puedes usar tu cliente rest favorito para hacer tus consultas desde el endpoint de la API: http://url:port/rest, por ejemplo: http://localhost:4000/rest. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.
 
 ## Despliegue
+### Docker
+Puedes desplegar la API usando Docker, de la siguiente manera
+```bash
+docker run -it -p 4000:4000 --rm --name api-acceso-datos joseluisgs/api-acceso-datos
+```
+
 ### Con NodeJS
 #### Instalación
 ```bash
@@ -109,10 +116,7 @@ Se incluye el fichero para usar y ver las consultas con [Postman](https://www.po
 - GraphQL: Para visualizar y lanzar tus consultas GraphQL.
 - ThunderClient: Para visualizar y lanzar tus consultas REST.
 
-
-
 ## Autor
-
 Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twitter.com/joseluisgonsan)
 
 [![Twitter](https://img.shields.io/twitter/follow/joseluisgonsan?style=social)](https://twitter.com/joseluisgonsan)
