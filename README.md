@@ -2,6 +2,8 @@
 Sencilla API para ser consumida siguiendo REST o GraphQL
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178c6)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-passing-blue)](https://hub.docker.com/r/joseluisgs/api-acceso-datos)
+[![Heroku](https://img.shields.io/badge/Heroku-passing-blueviolet)](https://api-acceso-datos.herokuapp.com/)
 [![Code Style](https://img.shields.io/badge/Lint%20Style-AirBnB-ff69b4)](https://airbnb.io/javascript)
 [![Licence](https://img.shields.io/github/license/joseluisgs/photo-gallery-ionic)](./LICENSE)
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/api-acceso-datos)
@@ -20,6 +22,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
     - [Cliente REST](#cliente-rest)
   - [Despliegue](#despliegue)
     - [Docker](#docker)
+    - [Heroku](#heroku)
     - [Con NodeJS](#con-nodejs)
       - [Instalación](#instalación)
       - [Ejecución](#ejecución)
@@ -37,7 +40,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
 Esta sencilla API con usos docentes será utilizada para consumir y manipular información en Acceso a Datos mediante REST o GraphQL usando distintos clientes. de esta manera podrás ver como funcionan estas dos modalidades de consumir datos bajo un servicio web y decidir cuál de ellas se adapta mejor a tus proyectos, puedes elegir entre las dos, o las dos a la vez según tus necesidades.
 
 ### Documentación
-La documentación de la API esta disponible en [este enlace](https://documenter.getpostman.com/view/11271351/UV5agGTC) o desde http://url:port/doc, por ejemplo: http://localhost:4000/doc
+La documentación de la API esta disponible en [este enlace](https://documenter.getpostman.com/view/11271351/UV5agGTC) o desde http://url:port/doc, por ejemplo: http://localhost:4000/doc o https://api-acceso-datos.herokuapp.com/
 
 ![imagen2](./images/comparable.png)
 
@@ -69,17 +72,19 @@ Puedes consumir esta API usando un cliente REST o GraphQL que desees.
 ![imagen2](./images/responses.png)
 
 ### Cliente GraphQL - Apollo Client
-Puedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.
+Puedes usar el propio cliente Apollo para hacer tus consultas desde el endpoint de la API: http://url:port/graphql, por ejemplo: http://localhost:4000/graphql o https://api-acceso-datos.herokuapp.com/graphql. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.
 
 ### Cliente REST
 Puedes usar tu cliente rest favorito para hacer tus consultas desde el endpoint de la API: http://url:port/rest, por ejemplo: http://localhost:4000/rest. También puedes usar Postman y el fichero con ejemplos de la carpeta postman.
 
 ## Despliegue
 ### Docker
-Puedes desplegar la API usando Docker, de la siguiente manera
+Puedes desplegar la API usando Docker, a partir de la siguiente [imagen](https://hub.docker.com/r/joseluisgs/api-acceso-datos), de la siguiente manera
 ```bash
 docker run -it -p 4000:4000 --rm --name api-acceso-datos joseluisgs/api-acceso-datos
 ```
+### Heroku
+La api está desplegada en Heroku, en el siguiente enlace: https://api-acceso-datos.herokuapp.com/
 
 ### Con NodeJS
 #### Instalación
@@ -109,7 +114,7 @@ o
 npm run lint:fix
 ```
 ## Postman
-Se incluye el fichero para usar y ver las consultas con [Postman](https://www.postman.com/). Con este cliente podrás hacer tus peticiones REST y GraphQL.
+Se incluye el fichero para usar y ver las consultas con [Postman](https://www.postman.com/). Con este cliente podrás hacer tus peticiones REST y GraphQL a nivel local.
 
 
 ## Extensiones de interés
