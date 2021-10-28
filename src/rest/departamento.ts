@@ -83,7 +83,7 @@ departamentoRouter.delete('/:id', (req: Request, res: Response) => {
 departamentoRouter.put('/:id', (req: Request, res: Response) => {
   try {
     return res.status(200).json(
-      DepartamentoService.updateDepartamento(req.params.id, req.body.nombre, req.body.presupuesto, req.params.id_jefe),
+      DepartamentoService.updateDepartamento(req.params.id, req.body.nombre, req.body.presupuesto, req.body.id_jefe),
     );
   } catch (err: any) {
     return res.status(500).json({
