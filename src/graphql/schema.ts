@@ -7,7 +7,7 @@ import { DocumentNode } from 'graphql';
 
 // Definición de tipos y Esquemas de GraphQL desde fichero
 // Load schema from the file
-const sources = loadTypedefsSync(join(__dirname, './schema.gql'), {
+const sources = loadTypedefsSync(join(__dirname, './schema.graphql'), {
   loaders: [
     new GraphQLFileLoader(),
   ],

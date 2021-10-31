@@ -17,7 +17,7 @@ const ProgramadorService = {
   },
 
   getByDepartamentoID(id: string) {
-    console.log(id);
+    //console.log(id);
     const programadores = db.programadores.filter(p => p.departamento == id);
     if (programadores) {
       return programadores;
@@ -27,7 +27,7 @@ const ProgramadorService = {
   },
 
   getByPerfil(perfil: string) {
-    console.log(perfil);
+    //console.log(perfil);
     const programadores = db.programadores.filter(p => p.perfil == perfil);
     if (programadores) {
       return programadores;
