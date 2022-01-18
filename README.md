@@ -25,6 +25,7 @@ Sencilla API para ser consumida siguiendo REST o GraphQL
     - [Heroku](#heroku)
     - [Con NodeJS](#con-nodejs)
       - [Instalación](#instalación)
+      - [Construcción](#construcción)
       - [Ejecución](#ejecución)
       - [Ejecución Modo Dev](#ejecución-modo-dev)
       - [Ejecución con Nodemon](#ejecución-con-nodemon)
@@ -89,12 +90,17 @@ La api está desplegada en Heroku, en el siguiente enlace: https://api-acceso-da
 ### Con NodeJS
 #### Instalación
 ```bash
-npm install
+npm install (si da error usa npm install --force)
+```
+
+#### Construcción
+```bash
+npm run build
 ```
 
 #### Ejecución
 ```bash
-npm start
+npm start (si da error npm run dev:run)
 ```
 
 #### Ejecución Modo Dev
